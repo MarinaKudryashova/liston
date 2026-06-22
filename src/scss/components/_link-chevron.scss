@@ -1,0 +1,18 @@
+.link-chevron {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--black);
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    stroke: var(--accent);
+    fill: none;
+  }
+}

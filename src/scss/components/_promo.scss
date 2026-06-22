@@ -77,6 +77,13 @@
     top: 50%;
     transform: translateY(-50%);
     left: -108px;
+    z-index: 5;
+
+    @media (max-width: 1760px) {
+      bottom: 40px;
+      top: auto;
+      left: 40px;
+    }
   }
 
   &__btn-next {
@@ -84,6 +91,13 @@
     top: 50%;
     transform: translateY(-50%);
     right: -108px;
+    z-index: 5;
+
+    @media (max-width: 1760px) {
+      bottom: 40px;
+      top: auto;
+      right: 40px;
+    }
   }
 
   & .swiper-slide {
@@ -94,6 +108,9 @@
 
   &__subtitle {
     margin-bottom: 30px;
+    color: var(--white);
+    padding: 0;
+    border: none;
   }
 
   &__img {
