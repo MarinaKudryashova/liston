@@ -5,5 +5,14 @@
 @import "settings";
 
 // подключения компонентов страницы
+@import "components/nav";
+@import "components/lang";
+@import "components/ui-iconlink";
+@import "components/ui-btn";
+@import "components/sec-title";
+@import "components/sec-subtitle";
+@import "components/slider-nav";
 
 // подключения компонентов Главной страницы
+@import "components/header";
+@import "components/promo";

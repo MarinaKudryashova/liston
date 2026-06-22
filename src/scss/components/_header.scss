@@ -1,0 +1,66 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 18.5px 0;
+  border-bottom: 1px solid var(--white-24);
+  z-index: 20;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__bottom {
+    display: none;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+
+  }
+
+  &__searchbar {
+    display: none;
+  }
+
+  &__lang {
+    margin-right: 8px;
+  }
+
+  &__burger {
+    display: none;
+  }
+
+  &__link {
+    color: var(--white);
+  }
+
+  & .ui-iconlink {
+    &__text {
+      display: none;
+    }
+
+    &__link-count {
+      display: none;
+    }
+  }
+
+  &__phone {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    border: 1px solid var(--white-24);
+    border-radius: 100px;
+    color: var(--white);
+  }
+}

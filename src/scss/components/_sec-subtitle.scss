@@ -1,0 +1,16 @@
+.sec-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 4px;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 120%;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--accent);
+  }
+}

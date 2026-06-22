@@ -1,0 +1,40 @@
+.slider-nav {
+  &__btn {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: background-color var(--transition-300);
+
+    &:hover {
+      background-color: var(--black);
+
+      .slider-nav__icon {
+        stroke: var(--white);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      background-color: var(--black);
+
+      .slider-nav__icon {
+        stroke: var(--white);
+      }
+    }
+  }
+
+  &__icon {
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: var(--grey);
+    stroke-width: 1.5px;
+    stroke-linecap: round;
+    transition: stroke var(--transition-300);
+  }
+}
