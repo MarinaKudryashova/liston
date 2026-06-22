@@ -3,10 +3,13 @@
   align-items: center;
   justify-content: start;
   gap: 4px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--grey);
   text-transform: uppercase;
   font-weight: 500;
   font-size: 16px;
   line-height: 120%;
+  color: var(--grey);
 
   & svg {
     width: 20px;

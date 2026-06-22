@@ -4,4 +4,8 @@
   font-weight: 500;
   font-size: 56px;
   line-height: 100%;
+
+  @include mobile {
+    font-size: 26px;
+  }
 }
