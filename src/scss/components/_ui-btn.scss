@@ -1,0 +1,84 @@
+.ui-btn {
+  --btn-bg: var(--accent);
+  --btn-bg-hover: #1f9ed2;
+  --btn-border-radius: 100px;
+  --btn-border-widht: 1px;
+  --btn-border-style: solid;
+  --btn-border-color: var(--btn-bg);
+  --btn-border-color-hover: var(--btn-bg-hover);
+  --btn-ff: var(--font-family);
+  --btn-fw: 500;
+  --btn-fz: 16px;
+  --btn-lh: 1.2;
+  --btn-color: var(--white);
+
+  @include btn-reset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-width: var((--btn-border-widht));
+  border-style: var(--btn-border-style);
+  border-color: var(--btn-border-color);
+  border-radius: var(--btn-border-radius);
+  padding: 0.75em 1.5em;
+  font-family: var(--btn-ff);
+  font-weight: var(--btn-fw);
+  font-size: var(--btn-fz);
+  line-height: var(--btn-lh);
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-align: center;
+  color: var(--btn-color);
+  background-color: var(--btn-bg);
+  cursor: pointer;
+  transition:
+    border-color var(--transition-300),
+    background-color var(--transition-300),
+    transform var(--transition-300);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    background-color: var(--btn-bg-hover);
+    border-color: var(--btn-bg-hover);
+  }
+  @include hover {
+    background-color: var(--btn-bg-hover);
+    border-color: var(--btn-bg-hover);
+  }
+  &:active {
+    transform: scale(99%);
+  }
+
+  &--white {
+    --btn-bg: var(--white);
+    --btn-bg-hover: var(--accent);
+    --color: var(--black);
+
+    &:focus-visible {
+      background-color: var(--btn-bg-hover);
+      border-color: var(--btn-bg-hover);
+      color: var(--white);
+    }
+    @include hover {
+      background-color: var(--btn-bg-hover);
+      border-color: var(--btn-bg-hover);
+      color: var(--white);
+    }
+  }
+
+  &--ghost {
+    --btn-bg: transparent;
+    --btn-bg-hover: var(--accent);
+    --color: var(--black);
+  }
+
+  &--ghost-white {
+    --btn-bg: transparent;
+    --btn-bg-hover: var(--accent);
+    --btn-border-color: var(--white);
+  }
+}
