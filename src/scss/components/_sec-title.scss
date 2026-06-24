@@ -5,6 +5,14 @@
   font-size: 56px;
   line-height: 100%;
 
+  @include big-desktop {
+    font-size: 50px;
+  }
+
+  @include small-desktop {
+    font-size: 44px;
+  }
+
   @include mobile {
     font-size: 26px;
   }

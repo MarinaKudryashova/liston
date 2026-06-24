@@ -1,11 +1,76 @@
 .nav {
-  --nav-link-color: var(--white);
+  --nav-link-color: var(--black);
+  --navlink-hover: var(--accent);
+
+  @include tablet {
+    position: relative;
+    padding: 30px;
+    background-color: var(--accent);
+    height: 100%;
+    width: 375px;
+    transform: translateX(100%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity var(--transition-500),
+      visibility var(--transition-500),
+      transform var(--transition-500);
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 16px;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--white-24);
+    }
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 16px;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--white-24);
+    }
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
 
   & .ui-link {
     color: var(--nav-link-color);
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
+    transition: color var(--transition-300);
+
+    &:hover {
+      color: var(--navlink-hover)
+    }
+
+    &:focus-visible {
+      outline: none;
+      color: var(--navlink-hover)
+    }
+
+    @include tablet {
+       &:hover {
+        color: var(--nav-link-color)
+      }
+
+      &:focus-visible {
+        outline: none;
+        color: var(--nav-link-color)
+      }
+    }
   }
 
   &>ul {
@@ -16,6 +81,16 @@
     padding: 0;
     justify-content: space-between;
     gap: 30px;
+
+    @include small-desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      flex-direction: column;
+      align-items: start;
+      gap: 25px;
+    }
   }
 
   & [data-dropdown] {
@@ -23,6 +98,11 @@
     display: flex;
     align-items: center;
     gap: 4px;
+
+    @include tablet {
+      position: static;
+      flex-wrap: wrap;
+    }
   }
 
   & [data-dropdown-open] {
@@ -31,6 +111,13 @@
     color: var(--nav-link-color);
     cursor: pointer;
 
+    &:focus {
+      outline: none;
+      svg {
+        stroke: var(--navlink-hover);
+      }
+    }
+
     & svg {
       width: 18px;
       height: 18px;
@@ -38,23 +125,19 @@
       stroke-width: 1.5px;
       stroke-linecap: round;
       fill: none;
-    }
-  }
+      transition: transform var(--transition-300), stroke var(--transition-300);
 
-  & [data-dropdown].is-open > [data-dropdown-open] {
-    color: var(--navlink-hover);
-
-    & svg {
-      transform: rotate(180deg);
+      @include tablet {
+        transform: rotate(270deg);
+      }
     }
   }
 
   & .sub-menu {
     position: absolute;
-    top: 0;
+    top: 32px;
     left: 0;
-    display: flex;
-    flex-direction: column;
+    columns: 2;
     gap: 46px 15px;
     width: max-content;
     padding: 50px 40px 40px;
@@ -67,21 +150,98 @@
     transition: opacity var(--transition-300),
                 transition var(--transition-300);
 
+    @include tablet {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+      border: none;
+      border-radius: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(100%);
+      box-shadow: none;
+      background-color: var(--accent);
+      overflow-y: auto;
+      z-index: 10;
+      transition:
+        opacity var(--transition-300),
+        transform var(--transition-300),
+        margin var(--transition-300);
+    }
+
+    &--xs {
+      gap: 15px;
+      padding: 40px;
+
+      @include tablet {
+        padding: 0;
+        gap: 25px;
+
+        .sub-menu__back {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    &.is-active {
+      padding: 30px;
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+
+      .sub-menu__back {
+        display: flex;
+      }
+    }
+
+    &__back {
+      @include btn-reset;
+      display: none;
+      align-items: center;
+      gap: 4px;
+      margin-bottom: 25px;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--white);
+
+      & svg {
+        width: 18px;
+        height: 18px;
+        stroke: var(--white);
+        stroke-width: 1.5px;
+        fill: none;
+        transform: rotate(90deg);
+      }
+    }
+
     & li>ul {
       display: flex;
       flex-direction: column;
       gap: 10px;
       padding: 0;
+      margin-bottom: 40px;
       list-style: none;
     }
 
     &__link {
       display: block;
       margin-bottom: 10px;
+      padding-left: 24px;
       font-weight: 500;
       font-size: 16px;
       line-height: 120%;
       text-transform: uppercase;
+      background-image: url("../../img/svg/marker-white.svg");
+      background-repeat: no-repeat;
+      background-position: 0 2px;
       color: var(--nav-link-color);
     }
 
@@ -93,8 +253,91 @@
     }
   }
 
-    & [data-dropdown].is-open > .sub-menu {
+  & [data-dropdown].is-open > .sub-menu {
+    opacity: 1;
+    visibility: visible;
     min-height: 172px;
-    transform: translateY(0) translateX(-50%);
+    transform: translateY(0) translateX(-40%);
+
+    @include big-desktop {
+      transform: translateY(0) translateX(-30%);
+    }
+
+    @include small-desktop {
+      transform: translateY(0) translateX(-25%);
+      max-width: 950px;
+    }
+
+    @include tablet {
+      max-height: 1000px;
+      min-height: auto;
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+
+      &::before {
+        position: absolute;
+        top: 0;
+        left: 16px;
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: var(--white-24);
+      }
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 16px;
+        content: "";
+        width: 1px;
+        height: 100%;
+        background-color: var(--white-24);
+      }
+
+    &.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(0);
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    }
+  }
+
+  & [data-dropdown].is-open > .sub-menu--xs {
+    min-height: 100px;
+    transform: translateY(0) translateX(20%);
+
+    @include tablet {
+      padding: 0;
+      max-height: 1000px;
+      min-height: auto;
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  & [data-dropdown]:hover > .ui-link,
+  & [data-dropdown]:focus-within > .ui-link,
+  & [data-dropdown].is-open > .ui-link {
+    color: var(--navlink-hover);
+
+    @include tablet {
+      color: var(--nav-link-color);
+    }
+  }
+
+  & [data-dropdown]:hover > [data-dropdown-open] svg,
+  & [data-dropdown]:focus-within > [data-dropdown-open] svg,
+  & [data-dropdown].is-open > [data-dropdown-open] svg {
+    transform: rotate(180deg);
+    stroke: var(--navlink-hover);
+
+    @include tablet {
+      transform: rotate(270deg);
+      stroke: var(--nav-link-color);
+    }
   }
 }

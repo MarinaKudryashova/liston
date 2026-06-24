@@ -1,7 +1,8 @@
-<header class="header">
+<header class="header header--light">
   <div class="header__container container">
     <a href="/" class="header__logo logo">
       <img class="logo__img" src="img/logo.svg" alt="Logo Листон" width="126" height="38">
+      <img class="logo__img logo__img--white" src="img/logo-white.svg" alt="Logo Листон" width="126" height="38">
     </a>
 
     <!-- Меню -->
@@ -10,7 +11,7 @@
         <ul>
           <li><a class="ui-link" aria-current="page" data-menu-item>Главная</a></li>
           <li data-dropdown>
-            <a class="ui-link" href="#" data-menu-item>Каталог</a>
+            <a class="ui-link" href="#" data-open="catalog" data-menu-item>Каталог</a>
             <button data-dropdown-open aria-expanded="false" aria-label="Открыть подменю">
               <svg>
                 <use xlink:href="img/sprite.svg#icon-caret-down">
@@ -18,7 +19,15 @@
               </svg>
             </button>
 
-            <ul class="sub-menu" data-dropdown-menu>
+            <ul class="sub-menu" data-submenu="catalog" data-dropdown-menu>
+              <li>
+                <button class="sub-menu__back" type="button">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-caret-down"></use>
+                  </svg>
+                  <span>Назад</span>
+                </button>
+              </li>
               <li>
                 <a class="sub-menu__link" href="#" data-menu-item>Центрифуги</a>
                 <ul>
@@ -70,13 +79,21 @@
             </ul>
           </li>
           <li data-dropdown>
-            <a class="ui-link" href="#" data-menu-item>О компании</a>
+            <a class="ui-link" href="#" data-open="company" data-menu-item>О компании</a>
             <button data-dropdown-open aria-expanded="false" aria-label="Открыть подменю">
               <svg>
                 <use xlink:href="img/sprite.svg#icon-caret-down"></use>
               </svg>
             </button>
-            <ul class="sub-menu" data-dropdown-menu>
+            <ul class="sub-menu sub-menu--xs" data-submenu="company" data-dropdown-menu>
+              <li>
+                <button class="sub-menu__back" type="button">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#icon-caret-down"></use>
+                  </svg>
+                  <span>Назад</span>
+                </button>
+              </li>
               <li><a class="ui-link" href="#" data-menu-item>Отзывы</a></li>
               <li><a class="ui-link" href="#" data-menu-item>Новости</a></li>
             </ul>
@@ -90,27 +107,35 @@
     <div class="header__action">
       <!-- Поиск -->
       <div class="header__searchbar searchbar">
-        <button class="searchbar__btn searchbar__btn--open btn-icon" type="button" aria-label="открыть форму поиска">
+        <button class="searchbar__btn searchbar__btn--open" type="button" aria-label="открыть форму поиска">
           <svg class="btn-icon__icon">
             <use xlink:href="img/sprite.svg#icon-search"></use>
           </svg>
         </button>
-        <form action="#" class="searchbar__form search" aria-label="форма поиска по сайту">
-          <button type="button" class="searchbar__btn searchbar__btn--close" aria-label="закрыть форму поиска">
-            <svg class="searchbar__icon-close">
-              <use xlink:href="img/sprite.svg#chevron-down"></use>
+        <form action="#" class="searchbar__form" aria-label="форма поиска по сайту">
+          <div class="search">
+            <button type="button" class="searchbar__btn searchbar__btn--close" aria-label="закрыть форму поиска">
+              <svg class="searchbar__icon-close">
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <svg class="search__icon">
+              <use xlink:href="img/sprite.svg#icon-search"></use>
             </svg>
-          </button>
-          <svg class="search__icon">
-            <use xlink:href="img/sprite.svg#icon-search"></use>
-          </svg>
-          <input type="search" class="search__input input-reset" placeholder="Поиск по сайту ..."
-            aria-label="Введите поисковый запрос">
-          <button type="reset" class="search__btn-clear btn-reset" aria-label="очистить строку поиска">
-            <svg class="search__icon-clear">
-              <use xlink:href="img/sprite.svg#icon-clear"></use>
-            </svg>
-          </button>
+            <input type="search" class="search__input input-reset" placeholder="Поиск по сайту ..."
+              aria-label="Введите поисковый запрос">
+            <button type="button" class="search__btn-clear btn-reset" aria-label="очистить строку поиска">
+              <svg class="search__icon-clear">
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+          </div>
+          <ul class="searchbar__popular">
+            <li><button class="searchbar__tag" type="button">Центрифуги</button></li>
+            <li><button class="searchbar__tag" type="button">Аквадистилляторы</button></li>
+            <li><button class="searchbar__tag" type="button">Центрифуги</button></li>
+            <li><button class="searchbar__tag" type="button">Аквадистилляторы</button></li>
+          </ul>
         </form>
       </div>
 
@@ -161,16 +186,18 @@
 
       <!-- Телефон -->
       <a href="tel:78003504041" class="header__phone" aria-label="Позвонить нам">
-        <!-- <svg>
+        <svg>
           <use xlink:href="img/sprite.svg#icon-phone"></use>
-        </svg> -->
+        </svg>
         <span>8(800)350-40-41</span>
       </a>
 
       <!-- Иконка бургер-меню -->
       <div class="header__burger">
         <button class="burger" aria-label="Открыть меню" aria-expanded="false" data-burger>
-          <span class="burger__line"></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
       </div>
     </div>
@@ -179,32 +206,32 @@
   <!-- Нижний уровень меню (мобильная версия) -->
   <div class="header__bottom header-bottom fixed-block">
     <div class="header-bottom__container container">
-      <a href="#" class="header-bottom__item">
-        <svg class="header-bottom__icon">
-          <use xlink:href="img/sprite.svg#search"></use>
+      <button type="button" class="header-bottom__item ui-iconlink open-search">
+        <svg class="header-bottom__icon ui-iconlink__icon">
+          <use xlink:href="img/sprite.svg#icon-search"></use>
         </svg>
-        <span class="header-bottom__text">Поиск</span>
-      </a>
-      <a href="#" class="header-bottom__item">
-        <svg class="header-bottom__icon">
+        <span class="header-bottom__text ui-iconlink__text">Поиск</span>
+      </button>
+      <a href="#" class="header-bottom__item ui-iconlink">
+        <svg class="header-bottom__icon ui-iconlink__icon">
           <use xlink:href="img/sprite.svg#compare"></use>
         </svg>
-        <span class="header-bottom__link-count">0</span>
-        <span class="header-bottom__text">Сравнение</span>
+        <span class="header-bottom__link-count ui-iconlink__link-count">0</span>
+        <span class="header-bottom__text ui-iconlink__text">Сравнение</span>
       </a>
-      <a href="#" class="header-bottom__item">
-        <svg class="header-bottom__icon">
+      <a href="#" class="header-bottom__item ui-iconlink">
+        <svg class="header-bottom__icon ui-iconlink__icon">
           <use xlink:href="img/sprite.svg#wishlist"></use>
         </svg>
-        <span class="header-bottom__link-count">0</span>
-        <span class="header-bottom__text">Избранное</span>
+        <span class="header-bottom__link-count ui-iconlink__link-count">0</span>
+        <span class="header-bottom__text ui-iconlink__text">Избранное</span>
       </a>
-      <a href="#" class="header-bottom__item">
-        <svg class="header-bottom__icon">
+      <a href="#" class="header-bottom__item ui-iconlink">
+        <svg class="header-bottom__icon ui-iconlink__icon">
           <use xlink:href="img/sprite.svg#cart"></use>
         </svg>
-        <span class="header-bottom__link-count">2</span>
-        <span class="header-bottom__text">Корзина</span>
+        <span class="header-bottom__link-count ui-iconlink__link-count">2</span>
+        <span class="header-bottom__text ui-iconlink__text">Корзина</span>
       </a>
     </div>
   </div>

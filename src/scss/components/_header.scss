@@ -1,4 +1,8 @@
 .header {
+  --link-color: var(--black);
+  --link-hover: var(--accent);
+  --link-border-color: var(--black-24);
+
   position: fixed;
   top: 0;
   left: 0;
@@ -6,6 +10,17 @@
   padding: 18.5px 0;
   border-bottom: 1px solid var(--white-24);
   z-index: 20;
+  transition: background-color var(--transition-300), transform var(--transition-300);
+
+  @include mobile {
+    padding: 15px 0;
+  }
+
+  &--light {
+    --link-color: var(--white);
+    --link-hover: var(--accent);
+    --link-border-color: var(--white-24);
+  }
 
   &__container {
     display: flex;
@@ -14,38 +29,148 @@
     gap: 20px;
   }
 
+  &__logo {
+    flex-shrink: 0;
+
+    @include small-mobile {
+      flex-shrink: unset;
+    }
+
+    & img {
+      @include mobile {
+        aspect-ratio: 126 / 38;
+      }
+    }
+
+    & .logo__img--white {
+      display: none;
+    }
+  }
+
   &__bottom {
     display: none;
+
+    @include mobile {
+      display: flex;
+    }
   }
 
   &__action {
     display: flex;
     align-items: center;
-
-  }
-
-  &__searchbar {
-    display: none;
   }
 
   &__lang {
     margin-right: 8px;
+    border-color: var(--link-border-color);
+
+    @include mobile {
+      margin-right: 10px;
+    }
+
+    .lang__link {
+      color: var(--link-color);
+    }
+
+    svg {
+      stroke: var(--link-color);
+    }
+
+    &:hover {
+      border-color: var(--link-hover);
+
+      .lang__current {
+        color: var(--link-hover);
+      }
+
+      svg {
+        stroke: var(--link-hover);
+      }
+    }
+
+    &:focus-within {
+      outline: none;
+      border-color: var(--link-hover);
+
+      .lang__current {
+        outline: none;
+        color: var(--link-hover);
+      }
+
+      svg {
+        stroke: var(--link-hover);
+      }
+    }
+
+    &.is-open {
+      .lang__list {
+        border-color: var(--link-border-color);
+      }
+    }
   }
 
   &__burger {
     display: none;
+
+    @include tablet {
+      display: flex;
+    }
   }
 
-  &__link {
-    color: var(--white);
+  & .burger {
+    --burger-color: var(--link-color);
+    --burger-border: var(--link-border-color)
   }
 
   & .ui-iconlink {
+    color: var(--link-color);
+
+    .ui-iconlink__icon {
+      stroke: var(--link-color);
+
+      @include mobile {
+        stroke: var(--grey);
+      }
+    }
+
+    &:hover {
+      .ui-iconlink__icon {
+        stroke: var(--link-hover);
+      }
+      .ui-iconlink__text {
+        color: var(--accent);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      .ui-iconlink__icon {
+        stroke: var(--link-hover);
+      }
+      .ui-iconlink__text {
+        color: var(--accent);
+      }
+    }
+
     &__text {
       display: none;
+
+      @include mobile {
+        display: block;
+      }
     }
 
     &__link-count {
+      display: none;
+
+      @include mobile {
+        display: flex;
+      }
+    }
+  }
+
+  &__link {
+    @include mobile {
       display: none;
     }
   }
@@ -59,8 +184,153 @@
     font-weight: 500;
     font-size: 16px;
     line-height: 120%;
-    border: 1px solid var(--white-24);
+    border: 1px solid var(--link-border-color);
     border-radius: 100px;
-    color: var(--white);
+    color: var(--link-color);
+    transition: color var(--transition-300), border-color var(--transition-300);
+
+    @include small-desktop {
+      padding: 12px;
+      margin-right: 8px;
+      border-radius: 15px;
+      width: 43px;
+      height: 43px;
+    }
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    &:hover {
+      color: var(--link-hover);
+      border-color: var(--accent);
+
+      & svg {
+        stroke: var(--link-hover);
+        fill: var(--link-hover);
+      }
+    }
+
+    &:focus-visible {
+      color: var(--link-hover);
+      border-color: var(--accent);
+      outline: none;
+
+      & svg {
+        stroke: var(--link-hover);
+      }
+    }
+
+    & span {
+      @include small-desktop {
+        display: none;
+      }
+    }
+
+    & svg {
+      display: none;
+      fill: var(--link-color);
+      width: 20px;
+      height: 20px;
+      transition: stroke var(--transition-300), fill var(--transition-300);
+
+      @include small-desktop {
+        display: flex;
+      }
+    }
+  }
+
+  & .nav {
+    --nav-link-color: var(--link-color);
+  }
+
+  &__nav {
+    @include tablet {
+      position: fixed;
+      top: 86px;
+      left: 0;
+      z-index: 50;
+      display: flex;
+      justify-content: end;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      visibility: hidden;
+      transition:
+        opacity var(--transition-300),
+        visibility var(--transition-300);
+    }
+
+    @include mobile {
+      top: 73px;
+    }
+
+    &:has(.nav.is-open) {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &:has(.nav.is-open) {
+    background-color: var(--link-hover);
+
+    .logo__img {
+      display: none;
+    }
+
+    .logo__img--white {
+      display: block;
+    }
+  }
+
+
+  &__searchbar {
+    .searchbar__btn svg {
+      stroke: var(--link-color);
+    }
+
+    .searchbar__btn:hover {
+      svg {
+        stroke: var(--link-hover);
+      }
+    }
+
+    .searchbar__btn:focus {
+      outline: none;
+      svg {
+        stroke: var(--link-hover);
+      }
+    }
+
+    @include mobile {
+      display: none;
+    }
+  }
+
+  //блюр для скролла
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    backdrop-filter: blur(40px); //по макету 10рх, но так ничего не видно
+    background-color: var(--white-24);
+    transition: background-color var(--transition-300), opacity var(--transition-300);
+  }
+
+  &.scroll {
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  // Класс для скрытой шапки
+  &.header--hidden {
+    transform: translateY(-100%);
   }
 }

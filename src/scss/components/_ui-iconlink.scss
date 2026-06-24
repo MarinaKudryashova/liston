@@ -19,6 +19,7 @@
     fill: none;
     stroke-width: 1.5px;
     stroke: var(--iconlink-color);
+    transition: stroke var(--transition-300);
   }
 
   &__text {
@@ -26,6 +27,7 @@
     font-weight: 400;
     line-height: 120%;
     color: var(--grey);
+    transition: color var(--transition-300);
   }
 
   &__link-count {
