@@ -16,6 +16,7 @@
     padding: 12px;
     color: var(--white);
     cursor: pointer;
+    z-index: 5;
 
     & svg {
       width: 18px;
@@ -30,10 +31,10 @@
   &__list {
     @include list-reset;
     position: absolute;
-    top: calc(100% + 4px);
+    top: 0;
     left: 0;
-    width: 100%;
-    max-height: 0;
+    width: calc(100% + 2px);
+    max-height: 300px;
     display: flex;
     flex-direction: column;
     gap: 4px;
@@ -42,7 +43,11 @@
     opacity: 0;
     visibility: hidden;
     transform: translateY(-8px);
-    overflow: visible;
+    overflow: hidden;
+
+    transition: opacity var(--transition-300),
+                transform var(--transition-300),
+                visibility var(--transition-300);
   }
 
   &__link {
@@ -54,23 +59,25 @@
   }
 
   &.is-open {
-    background-color: var(--white-24);
-    border-radius: 20px 20px 0 0;
+    // border-radius: 20px 20px 0 0;
+    border: none;
+
 
     .lang__current {
-      border-bottom: 0;
-      // padding-bottom: 0;
+      border: none;
     }
 
     .lang__list {
+      padding-top: 47px;
       padding-bottom: 12px;
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-      border-radius: 0 0 20px 20px;
+      border-radius: 20px;
       background-color: var(--white-24);
       border: 1px solid var(--white-24);
       border-top: none;
+      backdrop-filter: blur(10px)
     }
   }
 

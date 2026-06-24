@@ -21,3 +21,29 @@ if(promoSlider) {
     })
   })
 }
+
+// Слайдер Категорий
+const categorySlider = document.querySelectorAll('.sec-catalog__slider');
+
+if(categorySlider) {
+  categorySlider.forEach((slider) => {
+    const btnNextSlider = slider.closest('.sec-catalog').querySelector('.sec-catalog__btn-next');
+    const btnPrevSlider = slider.closest('.sec-catalog').querySelector('.sec-catalog__btn-prev');
+
+    const categorySwiper = new Swiper(slider, {
+      loop: true,
+      slidesPerView: 4,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: btnNextSlider,
+        prevEl: btnPrevSlider,
+      },
+      breakpoints: {
+        1440: {
+          slidesPerView: 3.3,
+          spaceBetween: 20,
+        }
+      }
+    })
+  })
+}

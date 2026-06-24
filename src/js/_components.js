@@ -7,3 +7,4 @@
 import './components/menu-dropdown'
 import './components/lang'
 import './components/slider'
+import './components/header-scroll'
