@@ -1,0 +1,80 @@
+.searchbar {
+  position: relative;
+  width: 43px;
+  height: 43px;
+
+  &__form {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 19px 0;
+    max-width: 100%;
+    min-height: 123px;
+    background-color: var(--accent);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    z-index: 100;
+    transition: opacity var(--transition-300),
+                visibility var(--transition-300);
+  }
+
+  &.is-open {
+    .searchbar__form {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: all;
+    }
+
+    .searchbar__btn--open {
+      pointer-events: none
+    }
+  }
+
+  &__btn {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    cursor: pointer;
+
+    & svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--black);
+      stroke-width: 1.5px;
+      stroke-linecap: round;
+      fill: none;
+      transition: stroke var(--transition-300);
+    }
+  }
+
+  &__popular {
+    @include list-reset;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    @include big-desktop {
+      margin: 0 16px;
+    }
+  }
+
+  &__tag {
+    @include btn-reset;
+    padding: 8px 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--white);
+    border-radius: 100px;
+    background-color: var(--white-24);
+    cursor: pointer;
+  }
+}

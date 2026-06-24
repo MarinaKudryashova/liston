@@ -16,4 +16,8 @@
     height: 20px;
     fill: var(--accent);
   }
+
+  @include small-desktop {
+    font-size: 14px;
+  }
 }

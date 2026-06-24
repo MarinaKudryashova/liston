@@ -1,0 +1,22 @@
+.header-bottom {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  border-top: 1px solid var(--black-24);
+
+  &__container {
+    width: 100%;
+    padding: 11px 16px;
+    background-color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+
+  &__icon {
+    stroke: var(--grey);
+  }
+}
