@@ -1,0 +1,34 @@
+.sec-areas {
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    @include small-tablet {
+      gap: 10px;
+    }
+  }
+
+  &__item {
+    width: calc(100% / 4 - 20px * 3 / 4);
+
+    @include small-desktop {
+      width: calc(100% / 2 - 20px * 1 / 2);
+    }
+
+    @include small-tablet {
+      width: calc(100% / 2 - 10px * 1 / 2);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+}
+

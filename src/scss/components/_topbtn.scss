@@ -1,0 +1,39 @@
+.topbtn {
+  --btn-color: var(--white);
+  --hover-color: var(--accent);
+
+  @include btn-reset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid var(--btn-color);
+  transition: border-color var(--transition-300);
+
+  &:hover {
+    border-color: var(--hover-color);
+
+    .topbtn__icon {
+      stroke: var(--hover-color);
+    }
+  }
+
+  &:hover {
+    outline: none;
+    border-color: var(--hover-color);
+
+    .topbtn__icon {
+      stroke: var(--hover-color);
+    }
+  }
+
+  &__icon {
+    fill: none;
+    stroke: var(--btn-color);
+    stroke-width: 1.5px;
+    transform: rotate(-90deg);
+    transition: stroke var(--transition-300);
+  }
+}

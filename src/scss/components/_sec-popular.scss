@@ -3,26 +3,8 @@
     margin-bottom: 32px;
   }
 
-  &__heading {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 25px 12px;
-    margin-bottom: 50px;
-  }
-
-  &__title {
-    grid-row: span 2;
-    max-width: 630px;
-  }
-
-  &__slider-nav {
+  & .swiper-slide {
     display: flex;
-    align-items: center;
-    gap: 4px;
-    justify-self: end;
-  }
-
-  &__link {
-    justify-self: end;
+    height: auto;
   }
 }

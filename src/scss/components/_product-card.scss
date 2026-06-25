@@ -1,0 +1,138 @@
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 0 30px;
+  flex: 1;
+
+  @include small-tablet {
+    padding: 0;
+  }
+
+  &__img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    height: 100%;
+    flex: 1;
+  }
+
+  &__category {
+    margin-bottom: 6px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--grey);
+  }
+
+  &__title {
+    margin: 0 0 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--black);
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__prices {
+    margin-bottom: 16px;
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+    margin-top: auto;
+  }
+
+  &__add-to-cart, &__more-btn {
+    width: 100%;
+  }
+
+  &__btns {
+    position: absolute;
+    top: 0;
+    right: 30px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include mobile {
+      right: 0;
+      gap: 10px;
+    }
+  }
+
+  &__like,
+  &__compare {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+    background-color: var(--bg);
+
+    @include mobile {
+      width: 39px;
+      height: 39px;
+    }
+
+    &:hover {
+      svg {
+        fill: var(--accent);
+        stroke: var(--accent);
+      }
+    }
+
+    &:focus-visible, &:focus {
+      outline: none;
+      svg {
+        fill: var(--accent);
+        stroke: var(--accent);
+      }
+    }
+
+    & svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: var(--grey);
+      stroke-width: 1.5px;
+      transition: stroke var(--transition-300),
+                  fill var(--transition-300);
+    }
+  }
+
+  &__label {
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 4px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    border-radius: 4.4px;
+    background-color: var(--red);
+    color: var(--white);
+
+    @include mobile {
+      left: 0;
+      font-size: 14px;
+    }
+  }
+
+
+}

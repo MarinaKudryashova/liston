@@ -12,6 +12,10 @@
   --btn-lh: 1.2;
   --btn-color: var(--white);
 
+  @include mobile {
+    --btn-fz: 14px;
+  }
+
   @include btn-reset;
   display: flex;
   align-items: center;
@@ -74,6 +78,22 @@
     --btn-bg: transparent;
     --btn-bg-hover: var(--accent);
     --btn-color: var(--black);
+  }
+
+  &--ghost-blue {
+    background-color: transparent;
+    --btn-border-color: var(--accent);
+    --btn-color: var(--black);
+
+    &:hover {
+      background-color: var(--accent);
+      color: var(--white);
+    }
+
+    &:focus {
+      background-color: var(--accent);
+      color: var(--white);
+    }
   }
 
   &--ghost-white {

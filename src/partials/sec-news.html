@@ -1,0 +1,93 @@
+<section class="sec-news sec-offset">
+  <div class="sec-news__container container">
+    <span class="sec-news__subtitle sec-subtitle">
+      <svg>
+        <use xlink:href="img/sprite.svg#marker-blue"></use>
+      </svg>
+      <span>Новости</span>
+    </span>
+    <!-- Шапка секции -->
+    <div class="sec-news__heading sec-heading">
+      <h2 class="sec-news__title sec-title sec-heading__title">Новости компании</h2>
+      <a href="#" class="sec-news__link link-chevron sec-heading__link">
+        <span>Все новости</span>
+        <svg class="link-chevron__icon">
+          <use xlink:href="img/sprite.svg#chevrons-right"></use>
+        </svg>
+      </a>
+      <!-- Навигация слайдера -->
+      <div class="slider-nav sec-news__slider-nav" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
+        <button class="sec-news__btn-prev slider-nav__btn">
+          <svg class="slider-nav__icon">
+            <use xlink:href="img/sprite.svg#chevron-left"></use>
+          </svg>
+        </button>
+        <button class="sec-news__btn-next slider-nav__btn">
+          <svg class="slider-nav__icon">
+            <use xlink:href="img/sprite.svg#chevron-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Слайдер новостей -->
+     <div class="slider sec-news__slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <article class="article-card" href="#">
+            <a class="article-card__link" href="#" aria-label="Перейти к новости"></a>
+            <picture class="article-card__img">
+              <!-- <source media="(max-width: 768px)" srcset="img/news/news-img-1-mobile.png" width="343"> -->
+              <source srcset="img/news/news-img-1.webp 1x" type="image/webp">
+              <img src="img/news/news-img-1.png" alt="Иллюстрация к новости"
+                  width="453" height="324" loading="lazy">
+            </picture>
+            <div class="article-card__info">
+              <span class="article-card__date">1 сентября 2025</span>
+              <h3 class="article-card__title is-clamp" style="--lines: 2;">
+                Компания "Листон" получила разрешительную документацию на свою продукцию в Республике Беларусь.
+                Центрифуги линейки "Листон С" официально поставляются во все медицинские учреждения РБ.
+              </h3>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="article-card">
+            <a class="article-card__link" href="#" aria-label="Перейти к новости"></a>
+            <picture class="article-card__img">
+              <!-- <source media="(max-width: 768px)" srcset="img/news/news-img-2-mobile.png" width="343"> -->
+              <source srcset="img/news/news-img-2.webp 1x" type="image/webp">
+              <img src="img/news/news-img-2.png" alt="Иллюстрация к новости"
+                  width="453" height="324" loading="lazy">
+            </picture>
+            <div class="article-card__info">
+              <span class="article-card__date">1 сентября 2025</span>
+              <h3 class="article-card__title is-clamp" style="--lines: 2;">
+                Уже много лет метод Гербера является «золотым стандартом» в отрасли.
+                Этот термин также применим к двум новым продуктам компании: центрифуге Liston C 1201 Milk
+                Compact и водяной бане Liston B 1107.
+              </h3>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="article-card">
+            <a class="article-card__link" href="#" aria-label="Перейти к новости"></a>
+            <picture class="article-card__img">
+              <!-- <source media="(max-width: 768px)" srcset="img/news/news-img-2-mobile.png" width="343"> -->
+              <source srcset="img/news/news-img-3.webp 1x" type="image/webp">
+              <img src="img/news/news-img-3.png" alt="Иллюстрация к новости"
+                  width="453" height="324" loading="lazy">
+            </picture>
+            <div class="article-card__info">
+              <span class="article-card__date">2 июня 2026</span>
+              <h3 class="article-card__title is-clamp" style="--lines: 2;">
+                Лучшая продукция 2025 года по мнению Liston
+              </h3>
+            </div>
+          </article>
+        </div>
+      </div>
+     </div>
+  </div>
+</section>
