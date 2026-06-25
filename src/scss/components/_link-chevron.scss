@@ -7,6 +7,27 @@
   line-height: 120%;
   color: var(--black);
 
+  &:hover {
+    .link-chevron__icon {
+      transform: translateX(6px);
+    }
+  }
+
+  &:focus {
+    outline: none;
+    .link-chevron__icon {
+      transform: translateX(6px);
+    }
+  }
+
+  @include tablet {
+    font-size: 18px;
+  }
+
+  @include mobile {
+    font-size: 16px;
+  }
+
   &__icon {
     width: 24px;
     height: 24px;
@@ -14,5 +35,7 @@
     stroke-linecap: round;
     stroke: var(--accent);
     fill: none;
+    transform: translateX(0);
+    transition: transform var(--transition-300);
   }
 }

@@ -1,0 +1,19 @@
+.address {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+
+  &__name {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--border);
+  }
+  &__value {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--white);
+  }
+}
+

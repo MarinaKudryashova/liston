@@ -1,0 +1,29 @@
+.messengers {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  &__link:hover {
+    svg {
+      fill: var(--accent);
+      stroke: var(--accent);
+    }
+  }
+
+  &__link:focus {
+    outline: none;
+    svg {
+      fill: var(--accent);
+      stroke: var(--accent);
+    }
+  }
+
+  &__link svg {
+    width: 40px;
+    height: 40px;
+    fill: var(--white);
+    stroke: var(--white);
+    transition: stroke var(--transition-300),
+                fill var(--transition-300);
+  }
+}

@@ -1,0 +1,99 @@
+.card-advantage {
+  width: 100%;
+  min-height: 320px;
+  height: 100%;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  background-color: var(--black);
+  color: var(--white);
+  border-left: 1px solid var(--white-24);
+
+  @include small-desktop {
+    min-height: 250px;
+  }
+
+  @include tablet {
+    padding: 24px;
+    min-height: 220px;
+  }
+
+  @include small-tablet {
+    padding: 20px;
+    min-height: 157px;
+    border-bottom: 1px solid var(--white-24);
+  }
+
+  &__img {
+    width: 64px;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    border-radius: 50%;
+    flex-shrink: 0;
+
+    @include tablet {
+      width: 56px;
+      height: 56px;
+    }
+
+    @include mobile {
+      width: 40px;
+      height: 40px;
+    }
+
+    & img {
+      @include tablet {
+        width: 35px;
+        height: 35px;
+      }
+      @include mobile {
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    @include mobile {
+      gap: 10px;
+    }
+  }
+
+  &__value {
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 100%;
+
+    @include small-desktop {
+      font-size: 28px;
+    }
+
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include small-tablet {
+      font-size: 20px;
+    }
+  }
+
+  &__text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--border);
+
+    @include small-tablet {
+      font-size: 14px;
+    }
+  }
+}

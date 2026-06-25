@@ -1,0 +1,147 @@
+.footer {
+  position: relative;
+  padding: 75px 0 40px;
+  background-color: var(--black);
+  color: var(--white);
+
+  &__container {
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  &__lang {
+    position: absolute;
+    top: 18px;
+    right: 0;
+
+    &-list {
+      @include list-reset;
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    &-link {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--white-40);
+
+      &--current {
+        color: var(--white);
+      }
+    }
+  }
+
+  &__callback {
+    grid-column: 1 / 2;
+  }
+
+  &__addresses {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    grid-column: 1 / 2;
+  }
+
+  &__menu {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    grid-row: 1 / 5;
+    grid-column: 2 / 3;
+    margin-top: 18px;
+  }
+
+  &__legal {
+    position: relative;
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 0;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      width: 100%;
+      background-color: var(--border);
+      opacity: 0.2;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      width: 100%;
+      background-color: var(--border);
+      opacity: 0.2;
+    }
+  }
+
+  &__bottom {
+    grid-column: span 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 19px;
+  }
+
+  &__topbtn {
+    position: absolute;
+    right: 40px;
+    bottom: 40px;
+  }
+
+  &__made {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 120%;
+    color: var(--white);
+
+    & .ui-link {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--white);
+      transition: color var(--transition-300);
+
+      &:hover {
+        color: var(--accent);
+      }
+      &:focus {
+        outline: none;
+        color: var(--accent);
+      }
+    }
+  }
+
+  &__map {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--white);
+    transition: color var(--transition-300);
+
+    &:hover {
+      color: var(--accent);
+    }
+    &:focus {
+      outline: none;
+      color: var(--accent);
+    }
+  }
+
+  &__badges {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}

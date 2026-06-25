@@ -3,13 +3,50 @@
   padding: 86px 0 0;
   width: 100%;
 
+  @include mobile {
+    padding-top: 73px;
+  }
+
   &__container {
     position: relative;
     z-index: 5;
     color: var(--white);
+    padding-bottom: 132px;
+    padding-top: 46px;
 
     @media (max-width: 1550px) {
-      padding: 0 6.032vw;
+      padding: 46px 6.032vw 132px;
+    }
+
+    @include small-desktop {
+      padding: 40px 16px 60px;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 16px;
+      width: 1px;
+      height: 100%;
+      background-color: var(--white-24);
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 47%;
+      width: 1px;
+      height: 100%;
+      background-color: var(--white-24);
+
+      @include small-tablet {
+        right: auto;
+        left: 16px;
+      }
     }
   }
 
@@ -25,6 +62,7 @@
     right: max(16px, calc((100% - var(--width)) / 2));
     top: 50%;
     transform: translateY(-50%);
+    z-index: 7;
 
     @include small-desktop {
       display: none;
@@ -52,6 +90,17 @@
     }
   }
 
+  &__content {
+    @include tablet {
+      max-width: 48.828vw;
+    }
+
+    @include small-tablet {
+      max-width: 100%;
+      padding: 0 16px;
+    }
+  }
+
   &__title {
     margin-bottom: 24px;
   }
@@ -68,6 +117,10 @@
       font-weight: 400;
       font-size: 16px;
       line-height: 120%;
+
+      @include mobile {
+        font-size: 14px;
+      }
     }
 
     & ul {
@@ -75,6 +128,10 @@
       display: flex;
       flex-direction: column;
       gap: 20px;
+
+      @include small-tablet {
+        gap: 10px;
+      }
     }
 
     & ul>li {
@@ -85,6 +142,10 @@
       line-height: 120%;
       background-image: url("../../img/svg/marker-blue.svg");
       background-repeat: no-repeat;
+
+      @include mobile {
+        font-size: 14px;
+      }
     }
   }
 
@@ -92,12 +153,27 @@
     display: flex;
     align-items: center;
     gap: 20px;
+
+    @include mobile {
+      justify-content: space-between;
+      gap: 9px;
+    }
+
+    & a {
+      @include mobile {
+        width: 100%;
+      }
+    }
   }
 
   & .swiper-slide {
     display: flex;
     align-items: center;
     gap: 50px;
+
+    @include tablet {
+      gap: 12px;
+    }
   }
 
   &__subtitle {
@@ -105,18 +181,38 @@
     color: var(--white);
     padding: 0;
     border: none;
+
+    @include small-tablet {
+      display: none;
+    }
   }
 
   &__img {
     flex-shrink: 0;
-    padding: 46px 0 132px;
 
     @include big-desktop {
       flex-shrink: unset;
     }
 
+    @include small-tablet {
+      display: none;
+    }
+
+    &--mobile {
+      display: none;
+
+      @include small-tablet {
+        display: block;
+      }
+    }
+
     & img {
       aspect-ratio: 665 / 592;
+
+      @include small-tablet {
+        width: 100%;
+        aspect-ratio: 311 / 277;
+      }
     }
   }
 }

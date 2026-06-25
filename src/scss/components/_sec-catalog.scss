@@ -1,36 +1,18 @@
 .sec-catalog {
   overflow: hidden;
 
-  &__container {
-
-  }
-
   &__subtitle {
     margin-bottom: 50px;
-  }
-
-  &__heading {
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 12px 25px;
-    margin-bottom: 40px;
-  }
-
-  &__title {
-    grid-row: span 2;
-  }
-
-  &__slider-nav {
-    grid-column: span 2;
-    justify-self: end;
-    display: flex;
-    align-items: center;
-    gap: 4px;
   }
 
   &__slider {
     overflow: hidden;
     margin-right: -260px;
     padding-right: 260px;
+
+    @include mobile {
+      margin-right: 0;
+      padding-right: 0;
+    }
   }
 }

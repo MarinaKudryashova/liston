@@ -80,4 +80,19 @@ a {
 
 .sec-offset {
   margin-bottom: 110px;
+
+  @include tablet {
+    margin-bottom: 90px;
+  }
+
+  @include mobile {
+    margin-bottom: 70px;
+  }
+}
+
+.is-clamp {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: var(--lines);
 }
