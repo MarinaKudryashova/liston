@@ -1,19 +1,27 @@
 .address {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 4px;
 
   &__name {
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
     color: var(--border);
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
   &__value {
     font-weight: 400;
     font-size: 16px;
     line-height: 120%;
     color: var(--white);
+    
+    @include mobile {
+      font-size: 14px;
+    }
   }
 }
 
