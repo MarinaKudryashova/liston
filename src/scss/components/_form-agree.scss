@@ -2,12 +2,17 @@
 
   &__label {
     position: relative;
+    display: block;
     padding-left: 30px;
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
     color: var(--white);
     cursor: pointer;
+
+    @include mobile {
+      font-size: 12px;
+    }
 
     & a {
       font-weight: 400;
@@ -16,6 +21,10 @@
       color: var(--white);
       text-decoration: underline;
       transition: color var(--transition-300);
+
+      @include mobile {
+        font-size: 12px;
+      }
 
       &:hover {
         color: var(--accent);
@@ -30,7 +39,8 @@
     &::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 50%;
+      transform: translateY(-50%);
       left: 0;
       width: 20px;
       height: 20px;
@@ -53,7 +63,8 @@
 
   &__icon {
     position: absolute;
-    top: 3px;
+    top: 55%;
+    transform: translateY(-50%);
     left: 3px;
     opacity: 0;
 

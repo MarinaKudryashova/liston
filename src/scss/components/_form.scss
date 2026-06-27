@@ -4,6 +4,11 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
+
+    @include mobile {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
   &__control {
@@ -14,6 +19,6 @@
   }
 
   &__btn {
-    max-width: 267px;
+    width: 100%;
   }
 }

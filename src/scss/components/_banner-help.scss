@@ -1,7 +1,14 @@
 .banner-help {
   position: relative;
   min-height: 796px;
-  display: flex;
+
+  @include big-desktop {
+    min-height: 600px;
+  }
+
+  @include small-tablet {
+    min-height: unset;
+  }
 
   &__bgimg {
     position: absolute;
@@ -24,6 +31,14 @@
       width: 50%;
       height: 100%;
       background-color: var(--black-80);
+
+      @include tablet {
+        width: 70%;
+      }
+
+      @include small-tablet {
+        width: 100%;
+      }
     }
   }
 
@@ -38,6 +53,16 @@
     width: 50%;
     padding: 64px 0 95px 64px;
     color: var(--white);
+
+    @include tablet {
+      width: 70%;
+      padding: 40px 0 75px 40px;
+    }
+
+    @include small-tablet {
+      width: 100%;
+      padding: 35px 0;
+    }
   }
 
   &__subtitle {
@@ -46,10 +71,27 @@
 
   &__title {
     margin-bottom: 64px;
+
+    @include tablet {
+      margin-bottom: 40px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__form {
     position: relative;
     z-index: 3;
+  }
+
+  & .form__btn {
+    max-width: 267px;
+
+    @include mobile {
+      max-width: 100%;
+    }
+
   }
 }
