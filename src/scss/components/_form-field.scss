@@ -29,11 +29,20 @@
     line-height: 120%;
     color: var(--white);
 
+    @include mobile {
+      padding: 14.5px 0;
+      font-size: 14px;
+    }
+
     &::placeholder {
       font-weight: 400;
       font-size: 16px;
       line-height: 120%;
       color: var(--white);
+
+      @include mobile {
+        font-size: 14px;
+      }
     }
 
     &:focus-visible {

@@ -21,4 +21,12 @@
   @include small-desktop {
     font-size: 14px;
   }
+
+  @include tablet {
+    margin-bottom: 24px;
+  }
+
+  @include mobile {
+    margin-bottom: 20px;
+  }
 }
