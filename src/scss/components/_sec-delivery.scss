@@ -1,0 +1,47 @@
+.sec-delivery {
+  &__heading {
+    justify-content: space-between;
+    gap: 6px 20px;
+    margin-bottom: 62px;
+  }
+
+  & .sec-heading__title {
+    max-width: 530px;
+  }
+
+  &__link {
+    grid-column: 1 / 2;
+  }
+
+  &__companies {
+    display: flex;
+    gap: 82px;
+    align-items: center;
+
+    & img {
+      flex-shrink: 0;
+    }
+  }
+
+  &__map-img {
+    position: relative;
+    margin-left: 116px;
+    aspect-ratio: 1281 / 629;
+    background: url("/img/delivery/map.svg") center / cover no-repeat;
+
+    @include big-desktop {
+      margin-left: 0;
+    }
+  }
+
+  &__pin {
+    position: absolute;
+    left: -120px;
+    bottom: 190px;
+
+    @include big-desktop {
+      left: 21.4286%;
+      bottom: 34.9345%;
+    }
+  }
+}
