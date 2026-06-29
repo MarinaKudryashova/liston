@@ -3,14 +3,29 @@
     justify-content: space-between;
     gap: 6px 20px;
     margin-bottom: 62px;
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
   }
 
   & .sec-heading__title {
     max-width: 530px;
+    margin-bottom: 0;
+  }
+
+  & .sec-heading__text {
+    margin-bottom: 0;
   }
 
   &__link {
     grid-column: 1 / 2;
+
+    @include tablet {
+      order: 4;
+    }
   }
 
   &__companies {
@@ -18,8 +33,29 @@
     gap: 82px;
     align-items: center;
 
+    @include tablet {
+      gap: 60px;
+    }
+
     & img {
       flex-shrink: 0;
+
+      @include mobile {
+        flex-shrink: unset;
+      }
+    }
+
+    & img:first-child {
+      @include mobile {
+        aspect-ratio: 168 / 25;
+        width: 168px;
+      }
+    }
+    & img:last-child {
+      @include mobile {
+        aspect-ratio: 64 / 18;
+        width: 64px;
+      }
     }
   }
 
