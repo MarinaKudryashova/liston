@@ -226,3 +226,24 @@ if(articlesSlider) {
     })
   })
 }
+
+
+// Слайдер Отзывов
+const reviewsSlider = document.querySelectorAll('.sec-reviews__slider');
+
+if(reviewsSlider) {
+  reviewsSlider.forEach((slider) => {
+    const btnNextSlider = slider.closest('.sec-reviews').querySelector('.sec-reviews__btn-next');
+    const btnPrevSlider = slider.closest('.sec-reviews').querySelector('.sec-reviews__btn-prev');
+
+    const reviewsSwiper = new Swiper(slider, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 40,
+      navigation: {
+        nextEl: btnNextSlider,
+        prevEl: btnPrevSlider,
+      }
+    })
+  })
+}
