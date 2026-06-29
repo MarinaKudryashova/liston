@@ -1,0 +1,31 @@
+.card-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: var(--blue-light);
+
+  @include mobile {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__name {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  &__text {
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+  }
+}

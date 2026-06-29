@@ -1,0 +1,13 @@
+.sec-reviews {
+  & .sec-heading {
+    margin-bottom: 45px;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
+  }
+
+  & .sec-heading__title {
+    max-width: 720px;
+  }
+}

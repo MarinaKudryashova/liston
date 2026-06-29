@@ -33,6 +33,9 @@
 @import "components/form-field";
 @import "components/footer-menu";
 @import "components/messengers";
+@import "components/rating";
+@import "components/reviews";
+@import "components/card-reviews";
 
 // подключения компонентов Главной страницы
 @import "components/header";
@@ -41,7 +44,7 @@
 @import "components/sec-popular";
 @import "components/advantages";
 @import "components/sec-clients";
-//
+@import "components/sec-reviews";
 //
 @import "components/sec-areas";
 @import "components/banner-help";

@@ -73,6 +73,27 @@
     }
   }
 
+  &--error {
+    .form-field__input {
+      border-color: var(--red);
+    }
+
+    .form-field__error {
+      display: block;
+    }
+  }
+
+  &__error {
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    display: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 120%;
+    color: var(--red);
+  }
+
   &__btn-clear {
     position: absolute;
     display: flex;

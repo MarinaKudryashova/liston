@@ -1,0 +1,17 @@
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+
+  &__icon {
+    width: 15px;
+    height: 15px;
+    fill: var(--grey-medium);
+  }
+
+  &__star.is-active {
+      .rating__icon {
+        fill: #FFCC00;
+      }
+    }
+}
