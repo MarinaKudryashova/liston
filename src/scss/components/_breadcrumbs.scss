@@ -1,0 +1,52 @@
+.breadcrumbs {
+  @include list-reset;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 26px;
+  padding: 50px 0;
+  overflow-x: auto;
+
+  @include mobile {
+    padding: 30px 0;
+  }
+
+  &__item {
+    position: relative;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: var(--grey);
+
+    @include mobile {
+      font-size: 14px;
+    }
+
+    &--current {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--black);
+    }
+  }
+
+  &__item:not(.breadcrumbs__item--current)::after {
+    content: "/";
+    position: absolute;
+    right: -16px;
+  }
+
+  &__link {
+    color: inherit;
+    transition: color var(--transition-300);
+
+    &:hover {
+      color: var(--accent);
+    }
+    &:focus {
+      outline: none;
+      color: var(--accent);
+    }
+  }
+}

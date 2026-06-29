@@ -41,10 +41,11 @@ a {
 
 .main {
   flex: 1 0 auto;
+  padding-top: 80px;
 
-  &:has(.error-404) {
-    display: flex;
-  }
+  // &:has(.error-404) {
+  //   display: flex;
+  // }
 }
 
 .visually-hidden {

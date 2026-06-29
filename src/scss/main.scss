@@ -7,6 +7,7 @@
 // подключения компонентов страницы
 @import "components/nav";
 @import "components/lang";
+@import "components/breadcrumbs";
 @import "components/burger";
 @import "components/ui-iconlink";
 @import "components/link-chevron";
@@ -53,5 +54,7 @@
 @import "components/sec-about";
 @import "components/sec-articles";
 @import "components/banner-contact";
-@import "components/footer"
+@import "components/footer";
 
+// 404
+@import "components/error-404"
