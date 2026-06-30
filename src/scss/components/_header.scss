@@ -247,6 +247,7 @@
   }
 
   &__nav {
+    position: relative;
     @include tablet {
       position: fixed;
       top: 86px;
@@ -270,6 +271,20 @@
     &:has(.nav.is-open) {
       opacity: 1;
       visibility: visible;
+    }
+  }
+
+  &__overlay {
+    display: none;
+
+    @include tablet {
+      position: absolute;
+      display: block;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black-40);
+      z-index: -5;
     }
   }
 

@@ -127,6 +127,8 @@ if(brandsSlider) {
       loop: true,
       slidesPerView: 1,
       spaceBetween: 8,
+      // centeredSlides: true,
+      // initialSlide: 3,
       navigation: {
         nextEl: btnNextSlider,
         prevEl: btnPrevSlider,
@@ -136,26 +138,24 @@ if(brandsSlider) {
           slidesPerView: 2,
           spaceBetween: 8,
         },
-        // 470: {
-        //   slidesPerView: 1.6,
-        //   spaceBetween: 10,
-        // },
-        // 768: {
-        //   slidesPerView: 2.1,
-        //   spaceBetween: 12,
-        // },
-        // 1024: {
-        //   slidesPerView: 2.6,
-        //   spaceBetween: 20,
-        // },
+        576: {
+          slidesPerView: 3,
+          spaceBetween: 12,
+        },
+        1024: {
+          slidesPerView: 3.8,
+          spaceBetween: 20,
+          centeredSlides: true,
+          initialSlide: 3,
+        },
         // 1200: {
-        //   slidesPerView: 2.9,
+        //   slidesPerView: 3.8,
         //   spaceBetween: 20,
         // },
-        1440: {
-          slidesPerView: 5,
-          spaceBetween: 16,
-        }
+        // 1440: {
+        //   slidesPerView: 3.8,
+        //   spaceBetween: 16,
+        // }
       }
     })
   })

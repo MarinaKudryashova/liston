@@ -4,4 +4,16 @@
   align-items: center;
   justify-content: center;
   min-height: 200px;
+
+  @include tablet {
+    min-height: 160px;
+  }
+
+  @include small-tablet {
+    min-height: 140px;
+  }
+
+  @include mobile {
+    min-height: 120px;
+  }
 }

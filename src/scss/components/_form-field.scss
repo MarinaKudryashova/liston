@@ -34,6 +34,21 @@
       font-size: 14px;
     }
 
+
+    &:autofill,
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      -webkit-text-fill-color: var(--white);
+      caret-color: var(--white);
+      border-bottom: 1px solid var(--grey);
+
+      -webkit-box-shadow: 0 0 0 1000px rgba(0, 4, 4, .8) inset;
+      box-shadow: 0 0 0 1000px rgba(0, 4, 4, .8) inset;
+
+      -webkit-background-clip: text;
+    }
+
     &::placeholder {
       font-weight: 400;
       font-size: 16px;
@@ -113,7 +128,7 @@
       height: 16px;
       stroke: var(--border);
       stroke-width: 1.5px;
-      transform: stroke var(--transition-300);
+      transition: stroke var(--transition-300);
     }
 
     &:hover {

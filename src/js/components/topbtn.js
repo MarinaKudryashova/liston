@@ -17,7 +17,7 @@ function initTopButton() {
     },
     {
       root: null,
-      rootMargin: "0px",
+      rootMargin: "1000px",
       threshold: 0,
     },
   );

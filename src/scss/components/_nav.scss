@@ -36,6 +36,7 @@
       background-color: var(--white-24);
     }
 
+    //открываем бургер
     &.is-open {
       opacity: 1;
       visibility: visible;
@@ -73,6 +74,7 @@
     }
   }
 
+  //основное меню
   &>ul {
     @include list-reset;
     display: flex;

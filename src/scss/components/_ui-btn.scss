@@ -37,6 +37,7 @@
   background-color: var(--btn-bg);
   cursor: pointer;
   transition:
+    color var(--transition-300),
     border-color var(--transition-300),
     background-color var(--transition-300),
     transform var(--transition-300);

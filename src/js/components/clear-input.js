@@ -27,3 +27,31 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleState();
   });
 });
+
+
+// Для поиска
+document.addEventListener('DOMContentLoaded', () => {
+  const search = document.querySelector('.search');
+
+  if (!search) return;
+
+  const input = search.querySelector('.search__input');
+  const clearBtn = search.querySelector('.search__btn-clear');
+
+  const toggleState = () => {
+    search.classList.toggle(
+      'search--filled',
+      input.value.trim().length > 0
+    );
+  };
+
+  input.addEventListener('input', toggleState);
+
+  clearBtn.addEventListener('click', () => {
+    input.value = '';
+    input.focus();
+    toggleState();
+  });
+
+  toggleState();
+});

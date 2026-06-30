@@ -24,6 +24,11 @@
     .card-category__img img {
       transform: scale(1.25);
     }
+    .card-category__link {
+      color: var(--white);
+      background-color: var(--accent);
+      border-color: var(--accent);
+    }
   }
 
   &--accent {
@@ -75,7 +80,7 @@
     }
   }
 
-  &__link {
-    z-index: 2;
-  }
+  // &__link {
+  //   z-index: 2;
+  // }
 }
