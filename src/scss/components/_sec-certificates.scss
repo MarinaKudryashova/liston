@@ -1,5 +1,16 @@
 .sec-certificates {
   &__title {
     max-width: 870px;
+    margin-bottom: 40px;
+
+    @include mobile {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    flex-direction: column;
   }
 }
