@@ -4,6 +4,7 @@ import './components/topbtn';
 import './components/clear-input';
 // import './components/showmore';
 // import './components/account';
+import './components/fslightbox-img';
 import './components/menu-desktop'
 import './components/menu-mobile'
 import './components/lang'

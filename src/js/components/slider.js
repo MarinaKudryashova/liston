@@ -247,3 +247,70 @@ if(reviewsSlider) {
     })
   })
 }
+
+
+// Слайдер сертификатов
+const certificatesSlider = document.querySelectorAll('.certificates__slider');
+
+if(certificatesSlider) {
+  certificatesSlider.forEach((slider) => {
+    const btnNextSlider = slider.closest('.certificates').querySelector('.certificates__btn-next');
+    const btnPrevSlider = slider.closest('.certificates').querySelector('.certificates__btn-prev');
+
+    const slides = slider.querySelectorAll(".swiper-slide")
+    const gallery = slider.closest('.certificates__gallery');
+
+    //минимальное кол-во слайдов для скролла
+    const getMinSlides = () => {
+      if (window.innerWidth < 576) {
+        return 2;
+      }
+
+      if (window.innerWidth < 768) {
+        return 3;
+      }
+
+      if (window.innerWidth < 1200) {
+        return 3;
+      }
+
+      return 4;
+    };
+
+    const minSlides = getMinSlides();
+
+    if (slides.length >= minSlides) {
+
+    new Swiper(slider, {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: btnNextSlider,
+        prevEl: btnPrevSlider
+      },
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        576: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 20,
+        },
+        1200: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      }
+    });
+    } else {
+      gallery.classList.add('is-static');
+    }
+  })
+}
+
