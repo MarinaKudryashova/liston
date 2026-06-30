@@ -34,6 +34,7 @@ document.addEventListener("DOMContentLoaded", () => {
     tag.addEventListener("click", () => {
       input.value = tag.textContent.trim();
       input.focus();
+      input.dispatchEvent(new Event("input"));
     });
   });
 
@@ -46,3 +47,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+

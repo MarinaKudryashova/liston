@@ -25,6 +25,38 @@
       height: 100%;
       background-color: var(--black-80);
     }
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 47%;
+      height: 100%;
+      width: 1px;
+      background-color: var(--white-24);
+      z-index: 1;
+
+      @include big-desktop {
+        right: 650px;
+      }
+
+      @media (max-width: 1270px) {
+        right: 604px;
+      }
+
+      @include small-desktop {
+        right: 532px;
+      }
+
+      @include tablet {
+        right: 482px;
+      }
+
+      @media (max-width: 850px) {
+        display: none;
+      }
+    }
   }
 
   &__container {

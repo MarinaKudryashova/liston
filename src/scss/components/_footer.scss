@@ -5,7 +5,7 @@
   color: var(--white);
 
   @include mobile {
-    padding: 42px 0 16px;
+    padding: 42px 0 82px;
   }
 
   &__container {
@@ -15,11 +15,12 @@
     gap: 0 95px;
 
     @include small-desktop {
-      gap: 0 60px;
+      gap: 0 40px;
+      grid-template-columns: 260px auto 51px;
     }
 
-    @include tablet {
-      gap: 0 40px;
+    @media (max-width: 1060px) {
+      gap: 0 60px;
       grid-template-columns: 220px auto;
     }
 
@@ -50,14 +51,14 @@
     grid-column: 3 / 4;
     margin-top: 18px;
 
-    @include tablet {
+    @media (max-width: 1060px) {
       display: none;
     }
 
     &--mobile {
       display: none;
 
-      @include tablet {
+      @media (max-width: 1060px){
         display: block;
         margin-top: 0;
       }
@@ -75,7 +76,7 @@
       align-items: center;
       gap: 20px;
 
-      @include tablet {
+      @include small-desktop {
         gap: 10px;
       }
     }
@@ -132,18 +133,14 @@
     margin-bottom: 40px;
 
     @include big-desktop {
-      gap: 90px;
-    }
-
-    @include small-desktop {
-      gap: 60px;
+      gap: 25px;
     }
 
     @include tablet {
       gap: 30px;
     }
 
-    @include small-tablet {
+    @media (max-width: 1060px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 40px 20px;
@@ -151,8 +148,11 @@
     }
 
     & .footer-menu:last-child {
-      grid-column: span 2;
-      max-width: unset;
+
+      @media (max-width: 1060px) {
+        grid-column: span 2;
+        max-width: unset;
+      }
     }
   }
 
@@ -164,9 +164,12 @@
     padding: 41px 0;
     gap: 29px;
 
+    @media (max-width: 1060px) {
+      grid-column: span 2;
+    }
+
     @include tablet {
       flex-direction: column;
-      grid-column: span 2;
     }
 
     @include small-tablet {
@@ -207,7 +210,7 @@
     padding-top: 19px;
     gap: 22px;
 
-    @include tablet {
+    @media (max-width: 1060px) {
       grid-column: span 2;
     }
 
@@ -218,16 +221,16 @@
     }
   }
 
-  &__topbtn {
-    position: absolute;
-    right: 40px;
-    bottom: 40px;
+  // &__topbtn {
+  //   position: absolute;
+  //   right: 40px;
+  //   bottom: 40px;
 
-    @include mobile {
-      bottom: 115px;
-      right: 16px;
-    }
-  }
+  //   @include mobile {
+  //     bottom: 115px;
+  //     right: 16px;
+  //   }
+  // }
 
   &__made {
     font-weight: 500;

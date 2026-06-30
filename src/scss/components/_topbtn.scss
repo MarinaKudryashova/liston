@@ -3,6 +3,9 @@
   --hover-color: var(--accent);
 
   @include btn-reset;
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,7 +13,21 @@
   height: 45px;
   border-radius: 50%;
   border: 1px solid var(--btn-color);
-  transition: border-color var(--transition-300);
+  background-color: var(--black);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(60px);
+  pointer-events: none;
+  z-index: 20;
+  transition: border-color var(--transition-300),
+              opacity var(--transition-300),
+              transform var(--transition-300),
+              visibility var(--transition-300);
+
+  @include mobile {
+    bottom: 80px;
+    right: 16px;
+  }
 
   &:hover {
     border-color: var(--hover-color);
@@ -29,6 +46,13 @@
     }
   }
 
+  &.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+
   &__icon {
     width: 40px;
     height: 36px;
@@ -38,4 +62,6 @@
     transform: rotate(-90deg);
     transition: stroke var(--transition-300);
   }
+
+
 }

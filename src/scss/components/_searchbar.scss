@@ -76,5 +76,14 @@
     border-radius: 100px;
     background-color: var(--white-24);
     cursor: pointer;
+    transition: background-color var(--transition-300);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.34);
+    }
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.34);
+    }
   }
 }

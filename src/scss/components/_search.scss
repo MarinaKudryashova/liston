@@ -5,9 +5,22 @@
   display: flex;
   align-items: center;
   border-bottom: 1px solid var(--white-24);
+  transition: border-color var(--transition-300);
 
   @include big-desktop {
     margin: 0 16px 10px;
+  }
+
+  &:has(.search__input:hover) {
+    border-color: var(--white);
+  }
+  &:has(.search__input:focus) {
+    border-color: var(--white);
+  }
+
+  &--filled .search__btn-clear {
+    opacity: 1;
+    pointer-events: all;
   }
 
   &__icon {
@@ -26,14 +39,29 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+
+    &:hover {
+      svg {
+        stroke: var(--white);
+      }
+    }
+    &:focus {
+      outline: none;
+      svg {
+        stroke: var(--white);
+      }
+    }
 
     svg {
-      width: 24px;
-      height: 24px;
-      stroke: var(--white);
+      width: 16px;
+      height: 16px;
+      stroke: var(--border);
       stroke-width: 1.5px;
       stroke-linecap: round;
       fill: none;
+      transition: stroke var(--transition-300);
     }
   }
 
