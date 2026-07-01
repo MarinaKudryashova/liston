@@ -62,11 +62,14 @@
   &__map-img {
     position: relative;
     margin-left: 116px;
-    aspect-ratio: 1281 / 629;
-    background: url("/img/delivery/map.svg") center / cover no-repeat;
 
     @include big-desktop {
       margin-left: 0;
+    }
+
+    & img {
+      display: block;
+      width: 100%;
     }
   }
 
@@ -76,8 +79,33 @@
     bottom: 190px;
 
     @include big-desktop {
-      left: 21.4286%;
-      bottom: 34.9345%;
+      left: 20.833vw;
+      bottom: 16.319vw;
+    }
+
+    @include small-desktop {
+      left: 24vw;
+      bottom: 16.319vw;
+    }
+
+    @include tablet {
+      left: 25vw;
+      bottom: 16vw;
+    }
+
+    @include tablet-xl {
+      left: 26vw;
+      bottom: 15vw;
+    }
+
+    @include mobile {
+      left: clamp(140px, 28vw, 28vw);
+      bottom: 12vw;
+    }
+
+    @include small-mobile {
+      left: clamp(90px, 28vw, 28vw);
+      bottom: 10vw;
     }
   }
 }

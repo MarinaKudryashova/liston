@@ -3,6 +3,18 @@
 
   &__subtitle {
     margin-bottom: 50px;
+
+    @include small-desktop {
+      margin-bottom: 32px;
+    }
+
+    @include tablet {
+      margin-bottom: 24px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
   }
 
   &__slider {
