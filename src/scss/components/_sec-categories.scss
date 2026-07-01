@@ -1,0 +1,40 @@
+.sec-categories {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    @include list-reset;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__item:nth-child(4) {
+    grid-column: span 2;
+
+    @include tablet {
+      grid-row: 2 / 3;
+    }
+
+    @include mobile {
+      grid-column: unset;
+      grid-row: unset;
+    }
+
+    .card-category__img {
+      left: auto;
+    }
+    .card-category__img img {
+      width: auto;
+    }
+  }
+}

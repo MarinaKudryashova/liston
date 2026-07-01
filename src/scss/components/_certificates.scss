@@ -44,6 +44,10 @@
     }
 
     @include small-tablet {
+      max-width: 520px;
+    }
+
+    @include mobile {
       max-width: 100%;
     }
   }
@@ -63,7 +67,7 @@
     }
 
     @include mobile {
-      width: 343;
+      width: 343px;
     }
   }
 

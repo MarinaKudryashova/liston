@@ -1,0 +1,40 @@
+.news {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__list {
+    @include list-reset;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+  }
+
+  &__item {
+    width: calc(100% / 3 - 20px * 2 / 3);
+
+    @include tablet {
+      width: calc(100% / 2 - 20px * 1 / 2);
+    }
+
+    @include mobile {
+      width: 100%;
+    }
+  }
+
+  &__more-btn {
+    margin: 0 auto 30px;
+    max-width: 194px;
+
+    @include mobile {
+      max-width: 100%;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__pagination {
+    margin: 0 auto;
+  }
+}
