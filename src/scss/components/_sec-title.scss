@@ -20,4 +20,8 @@
   @include mobile {
     font-size: 26px;
   }
+
+  @include small-mobile {
+    font-size: 24px;
+  }
 }

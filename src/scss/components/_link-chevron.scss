@@ -38,4 +38,16 @@
     transform: translateX(0);
     transition: transform var(--transition-300);
   }
+
+  &--down {
+    .link-chevron__icon {
+      transform: rotate(90deg);
+    }
+
+    &:hover {
+      .link-chevron__icon {
+        transform: rotate(90deg) translateX(6px);
+      }
+    }
+  }
 }
