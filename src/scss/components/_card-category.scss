@@ -17,7 +17,11 @@
   }
 
   @include mobile {
-    height: 300px;
+    min-height: 300px;
+  }
+
+  @include small-mobile {
+    padding:0 20px 20px;
   }
 
   &:hover {
@@ -79,8 +83,4 @@
       font-size: 20px;
     }
   }
-
-  // &__link {
-  //   z-index: 2;
-  // }
 }

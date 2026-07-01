@@ -250,67 +250,78 @@ if(reviewsSlider) {
 
 
 // Слайдер сертификатов
-const certificatesSlider = document.querySelectorAll('.certificates__slider');
 
-if(certificatesSlider) {
-  certificatesSlider.forEach((slider) => {
-    const btnNextSlider = slider.closest('.certificates').querySelector('.certificates__btn-next');
-    const btnPrevSlider = slider.closest('.certificates').querySelector('.certificates__btn-prev');
+const certificatesSliders = document.querySelectorAll('.certificates__slider');
 
-    const slides = slider.querySelectorAll(".swiper-slide")
-    const gallery = slider.closest('.certificates__gallery');
+if (certificatesSliders.length) {
 
-    //минимальное кол-во слайдов для скролла
-    const getMinSlides = () => {
-      if (window.innerWidth < 576) {
-        return 2;
-      }
+  let swipers = [];
 
-      if (window.innerWidth < 768) {
-        return 3;
-      }
+  const getSlidesPerView = () => {
+    if (window.innerWidth >= 1200) return 3;
+    if (window.innerWidth >= 577) return 2;
+    return 1;
+  };
 
-      if (window.innerWidth < 1200) {
-        return 3;
-      }
+  const initSliders = () => {
 
-      return 4;
-    };
-
-    const minSlides = getMinSlides();
-
-    if (slides.length >= minSlides) {
-
-    new Swiper(slider, {
-      loop: true,
-      slidesPerView: 1,
-      spaceBetween: 16,
-      navigation: {
-        nextEl: btnNextSlider,
-        prevEl: btnPrevSlider
-      },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-        },
-        576: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 20,
-        },
-        1200: {
-          slidesPerView: 3,
-          spaceBetween: 30,
-        },
-      }
+    // уничтожаем старые Swiper
+    swipers.forEach((swiper) => {
+      swiper.destroy(true, true);
     });
-    } else {
-      gallery.classList.add('is-static');
-    }
-  })
-}
 
+    swipers = [];
+
+    certificatesSliders.forEach((slider) => {
+
+      const block = slider.closest('.certificates');
+      const gallery = block.querySelector('.certificates__gallery');
+
+      const btnNext = block.querySelector('.certificates__btn-next');
+      const btnPrev = block.querySelector('.certificates__btn-prev');
+
+      const slidesCount = slider.querySelectorAll('.swiper-slide').length;
+      const slidesPerView = getSlidesPerView();
+
+      const isNeeded = slidesCount > slidesPerView;
+
+      if (!isNeeded) {
+        gallery?.classList.add('is-static');
+        return;
+      }
+
+      gallery?.classList.remove('is-static');
+
+      const swiper = new Swiper(slider, {
+        loop: slidesCount > slidesPerView,
+
+        slidesPerView: 1,
+        spaceBetween: 16,
+
+        navigation: {
+          nextEl: btnNext,
+          prevEl: btnPrev
+        },
+
+        breakpoints: {
+          320: { slidesPerView: 1 },
+          577: { slidesPerView: 2, spaceBetween: 20 },
+          1200: { slidesPerView: 3, spaceBetween: 30 }
+        }
+      });
+
+      swipers.push(swiper);
+    });
+  };
+
+  // первый запуск
+  initSliders();
+
+  // resize с задержкой
+  let timer;
+
+  window.addEventListener('resize', () => {
+    clearTimeout(timer);
+    timer = setTimeout(initSliders, 200);
+  });
+}
