@@ -72,6 +72,10 @@
       color: var(--link-color);
     }
 
+    .lang__current {
+      color: var(--link-color);
+    }
+
     svg {
       stroke: var(--link-color);
     }
@@ -157,14 +161,6 @@
 
       @include mobile {
         display: block;
-      }
-    }
-
-    &__link-count {
-      display: none;
-
-      @include mobile {
-        display: flex;
       }
     }
   }

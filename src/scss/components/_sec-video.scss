@@ -1,0 +1,44 @@
+.sec-video {
+  position: relative;
+  min-height: 855px;
+  margin-bottom: 70px;
+  padding-top: 86px;
+
+  @include small-desktop {
+    min-height: 780px;
+  }
+
+  @include tablet {
+    min-height: 720px;
+  }
+
+  @include small-tablet {
+    min-height: 680px;
+  }
+
+  @include mobile {
+    min-height: 640px;
+  }
+
+  &__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1920 / 855;
+
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--black-56);
+    }
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

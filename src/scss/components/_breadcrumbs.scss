@@ -54,4 +54,12 @@
       color: var(--accent);
     }
   }
+
+  &--light {
+    margin-top: 0;
+    
+    .breadcrumbs__item--current {
+      color: var(--white);
+    }
+  }
 }
