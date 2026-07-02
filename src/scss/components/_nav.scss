@@ -112,6 +112,11 @@
     display: flex;
     color: var(--nav-link-color);
     cursor: pointer;
+    pointer-events: none;
+
+    @include tablet {
+      pointer-events: all;
+    }
 
     &:focus {
       outline: none;
@@ -244,11 +249,11 @@
       background-image: url("../../img/svg/marker-white.svg");
       background-repeat: no-repeat;
       background-position: 0 2px;
-      color: var(--nav-link-color);
+      color: var(--white);
     }
 
     & .ui-link {
-      color: var(--nav-link-color);
+      color: var(--white);
       font-weight: 400;
       font-size: 14px;
       line-height: 120%;
