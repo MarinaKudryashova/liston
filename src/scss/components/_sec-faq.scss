@@ -1,0 +1,14 @@
+.sec-faq {
+  &__title {
+    margin-bottom: 40px;
+  }
+
+  &__accordion {
+    margin-bottom: 0;
+  }
+}
+
+/* Переопределяем выравнивание ТОЛЬКО для заголовков внутри FAQ-аккордеона */
+.sec-faq__accordion .accordion__title {
+  text-align: left;
+}

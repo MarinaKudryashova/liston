@@ -1,0 +1,161 @@
+// АККОРДЕОН НА СТРАНИЦЕ ТОВАРА
+
+.single-services__accordion,
+.sec-faq__accordion {
+  margin-bottom: 140px;
+
+  .accordion__item {
+    border-bottom: 1px solid var(--accent);
+    margin-bottom: 30px;
+
+    @include tablet {
+      margin-bottom: 22px;
+    }
+  }
+
+  .accordion__control {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 30px 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--black);
+    transition: color 0.2s;
+
+    @include tablet {
+      font-size: 20px;
+      padding: 0 0 22px 0;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+
+    .accordion__icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      transform: rotate(90deg);
+      transition: transform 0.3s ease;
+
+      // .link-chevron__icon {
+      // width: 24px;
+      // height: 24px;
+      // fill: none;
+      // stroke: var(--black);
+      // stroke-width: 2;
+      // transition: stroke 0.2s;
+      // }
+    }
+
+    &:hover .accordion__icon .link-chevron__icon {
+      stroke: var(--accent);
+    }
+  }
+
+  .accordion__item--active {
+    .accordion__icon {
+      transform: rotate(-90deg);
+    }
+  }
+
+  .accordion__content {
+    overflow: hidden;
+    max-height: 0;
+    transition:
+      max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+      padding 0.6s ease;
+    padding: 0;
+
+    &[aria-hidden="false"] {
+      max-height: 3000px;
+    }
+  }
+
+  .accordion__body {
+    font-size: 16px;
+    line-height: 130%;
+    color: var(--black);
+
+    p {
+      margin: 0 0 20px;
+      &:not(:first-child) {
+        margin-bottom: 0;
+      }
+
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+    // список с иконками
+    .accordion__body-list {
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+
+    .accordion__body-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 16px;
+      line-height: 120%;
+      color: var(--black);
+
+      svg {
+        flex-shrink: 0;
+        width: 20px;
+        height: 20px;
+        fill: var(--accent);
+
+        @include mobile {
+          width: 14px;
+          height: 16px;
+        }
+      }
+
+      span {
+        flex: 1;
+
+        @include mobile {
+          font-size: 14px;
+        }
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  .accordion__wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+
+    @include small-desktop {
+      gap: 20px;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

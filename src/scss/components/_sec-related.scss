@@ -1,0 +1,10 @@
+.sec-related {
+  &__subtitle {
+    margin-bottom: 32px;
+  }
+
+  & .swiper-slide {
+    display: flex;
+    height: auto;
+  }
+}
