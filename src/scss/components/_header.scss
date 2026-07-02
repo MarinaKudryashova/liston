@@ -293,7 +293,6 @@
     }
   }
 
-
   &__searchbar {
     .searchbar__btn svg {
       stroke: var(--link-color);
@@ -314,6 +313,37 @@
 
     @include mobile {
       display: none;
+    }
+  }
+
+  &:has(.burger.is-open) {
+    .nav .ui-link  {
+      color: var(--white);
+    }
+    .nav [data-dropdown-open] svg {
+      stroke: var(--white);
+    }
+    .header__phone {
+      border-color: var(--white);
+    }
+    .header__phone svg {
+      fill: var(--white);
+    }
+    .header__lang {
+      z-index: 55;
+      border-color: var(--white);
+    }
+    .lang__current {
+      color: var(--white);
+    }
+    .lang__current svg {
+      stroke: var(--white);
+    }
+    .lang__link {
+      color: var(--white);
+    }
+    .header__lang.is-open .lang__list {
+      border-color: var(--white);
     }
   }
 

@@ -267,7 +267,7 @@
     transform: translateY(0) translateX(-40%);
 
     @include big-desktop {
-      transform: translateY(0) translateX(-30%);
+      transform: translateY(0) translateX(-20%);
     }
 
     @include small-desktop {

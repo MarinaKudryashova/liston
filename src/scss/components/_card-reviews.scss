@@ -1,6 +1,7 @@
 .card-reviews {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 20px;
   padding: 30px;
   background-color: var(--blue-light);

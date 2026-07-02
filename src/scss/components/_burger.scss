@@ -43,6 +43,12 @@
   }
 
   &.is-open {
+    border-color: var(--white);
+
+    span {
+      background-color: var(--white);
+    }
+
     span:nth-child(1) {
       transform: translateY(4.5px) rotate(-45deg);
     }
