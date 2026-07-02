@@ -56,7 +56,8 @@
     margin-top: auto;
   }
 
-  &__add-to-cart, &__more-btn {
+  &__add-to-cart,
+  &__more-btn {
     width: 100%;
   }
 
@@ -97,7 +98,8 @@
       }
     }
 
-    &:focus-visible, &:focus {
+    &:focus-visible,
+    &:focus {
       outline: none;
       svg {
         fill: var(--accent);
@@ -111,8 +113,9 @@
       fill: none;
       stroke: var(--grey);
       stroke-width: 1.5px;
-      transition: stroke var(--transition-300),
-                  fill var(--transition-300);
+      transition:
+        stroke var(--transition-300),
+        fill var(--transition-300);
     }
   }
 
@@ -133,6 +136,4 @@
       font-size: 14px;
     }
   }
-
-
 }
