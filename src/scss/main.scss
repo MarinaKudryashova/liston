@@ -39,8 +39,7 @@
 @import "components/card-reviews";
 @import "components/product-page";
 @import "components/accordion";
-@import "components/sec-related";
-@import "components/sec-faq";
+@import "components/pagination";
 
 // подключения компонентов Главной страницы
 @import "components/header";
@@ -66,7 +65,11 @@
 @import "components/sec-principle";
 @import "components/sec-video";
 @import "components/sec-company";
+@import "components/sec-favorites";
+@import "components/reviews-main";
 @import "components/news";
+@import "components/sec-related";
+@import "components/sec-faq";
 
 // 404
 @import "components/error-404";
