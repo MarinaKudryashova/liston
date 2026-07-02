@@ -16,12 +16,6 @@
     padding: 15px 0;
   }
 
-  &--light {
-    --link-color: var(--white);
-    --link-hover: var(--accent);
-    --link-border-color: var(--white-24);
-  }
-
   &__container {
     display: flex;
     align-items: center;
@@ -42,6 +36,9 @@
       }
     }
 
+    & .logo__img--light {
+      display: none;
+    }
     & .logo__img--white {
       display: none;
     }
@@ -343,5 +340,18 @@
   // Класс для скрытой шапки
   &.header--hidden {
     transform: translateY(-100%);
+  }
+
+  &--light {
+    --link-color: var(--white);
+    --link-hover: var(--accent);
+    --link-border-color: var(--white-24);
+
+    & .logo__img--light {
+      display: block;
+    }
+    & .logo__img--black {
+      display: none;
+    }
   }
 }
