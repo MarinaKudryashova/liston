@@ -7,9 +7,11 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      <h1 class="visually-hidden">Отзывы</h1>
-      @include('partials/breadcrumbs-reviews.html')
-      @include('partials/reviews-main.html')
+      <h1 class="visually-hidden">Доставка</h1>
+      @include('partials/breadcrumbs-delivery.html')
+      <div class="delivery">
+        @include('partials/sec-delivery-main.html')
+      </div>
       @include('partials/banner-contact.html')
     </main>
     @include('partials/footer.html')

@@ -24,6 +24,11 @@
               transform var(--transition-300),
               visibility var(--transition-300);
 
+  @include small-desktop {
+    right: 16px;
+    bottom: 16px;
+  }
+
   @include mobile {
     bottom: 80px;
     right: 16px;

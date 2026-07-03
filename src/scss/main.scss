@@ -41,6 +41,9 @@
 @import "components/accordion";
 @import "components/pagination";
 @import "components/certificates";
+@import "components/textredactor";
+@import "components/category-nav";
+@import "components/map";
 
 // подключения компонентов Главной страницы
 @import "components/header";
@@ -60,6 +63,7 @@
 @import "components/banner-contact";
 @import "components/footer";
 
+
 // компоненты других страниц
 @import "components/sec-categories";
 @import "components/sec-equipment";
@@ -69,8 +73,12 @@
 @import "components/sec-favorites";
 @import "components/reviews-main";
 @import "components/news";
+@import "components/delivery";
 @import "components/sec-related";
 @import "components/sec-faq";
+@import "components/sec-contacts";
+@import "components/catalog-detailed";
+@import "components/category";
 
 // 404
 @import "components/error-404";

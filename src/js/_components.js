@@ -10,6 +10,8 @@ import "./components/menu-mobile";
 import "./components/lang";
 import "./components/search";
 import "./components/slider";
+import "./components/like-btn";
 import "./components/header-scroll";
 import "./components/product-slider";
 import "./components/product-accordion";
+import "./components/text-expand";

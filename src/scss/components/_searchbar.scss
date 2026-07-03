@@ -50,6 +50,14 @@
       fill: none;
       transition: stroke var(--transition-300);
     }
+
+    &--close svg {
+      width: 54px;
+      height: 54px;
+      stroke-width: 0;
+      fill: var(--white);
+      stroke: none;
+    }
   }
 
   &__popular {
