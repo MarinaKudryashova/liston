@@ -1,0 +1,450 @@
+<div class="modal">
+  <div
+    class="modal__window"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="modalTitle"
+  >
+    <!-- Крестик-иконка -->
+    <button type="button" class="modal__close" aria-label="Закрыть окно">
+      <svg class="modal__close-icon">
+        <use xlink:href="img/sprite.svg#close"></use>
+      </svg>
+    </button>
+
+    <div class="modal__content">
+      <!-- Фото -->
+      <div class="modal__image">
+        <div class="modal__image-wrap">
+          <img
+            class="modal__image-img"
+            src="img/catalog/accessories-img-S-8-15.jpg"
+            alt="Пример товара"
+            loading="lazy"
+            width="619"
+            height="666"
+          />
+
+          <div class="product-card__btns modal__image-btns">
+            <button class="product-card__like" aria-label="В избранное">
+              <svg width="20" height="20">
+                <use xlink:href="img/sprite.svg#wishlist"></use>
+              </svg>
+            </button>
+            <button class="product-card__compare" aria-label="В сравнение">
+              <svg width="20" height="20">
+                <use xlink:href="img/sprite.svg#compare"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Инфо -->
+      <div class="modal__info">
+        <div class="modal__info-wrap">
+          <div class="modal__info-about">
+            <span class="modal__category">Аксессуары</span>
+            <h2 class="modal__title">Бакет-ротор S-8-15</h2>
+            <div class="modal__desc">
+              <p>
+                Надёжный аксессуар для профессионального использования.
+                Совместим с большинством моделей линейки S. Изготовлен из
+                высокопрочного сплава, устойчивого к износу.
+              </p>
+            </div>
+          </div>
+
+          <div class="modal__info-order">
+            <div class="modal__price">Цена: по запросу</div>
+
+            <div class="modal__actions">
+              <button
+                class="product-card__add-to-cart ui-btn ui-btn--accent"
+                type="button"
+              >
+                В корзину
+              </button>
+              <a
+                href="#"
+                class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                >Купить в 1 клик</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Блок аксессуаров -->
+        <!-- <div class="modal__accessories-section"> -->
+        <h3 class="modal__section-title">Сопутствующие аксессуары</h3>
+        <div class="modal__catalog-scroll">
+          <div class="accessories-grid">
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-1.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-1.jpg"
+                  alt="Бакет B-1-17"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Бакет B-1-17</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-2.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-2.jpg"
+                  alt="Адаптер TWR-16-1-F"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Адаптер TWR-16-1-F</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-3.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-3.jpg"
+                  alt="Адаптер TWR-17-1"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Адаптер TWR-17-1</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-1.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-1.jpg"
+                  alt="Бакет B-1-17"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Бакет B-1-17</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-2.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-2.jpg"
+                  alt="Адаптер TWR-16-1-F"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Адаптер TWR-16-1-F</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-3.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-3.jpg"
+                  alt="Адаптер TWR-17-1"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Адаптер TWR-17-1</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-1.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-1.jpg"
+                  alt="Бакет B-1-17"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Бакет B-1-17</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-2.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-2.jpg"
+                  alt="Адаптер TWR-16-1-F"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Адаптер TWR-16-1-F</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="product-card">
+              <a href="#" class="product-card__link"></a>
+              <picture class="product-card__img">
+                <!-- <source
+                  media="(max-width: 768px)"
+                  srcset="img/catalog/accessories-img-mobile-Se-12-15.jpg"
+                  width="343"
+                /> -->
+                <source
+                  srcset="img/catalog/addit-3.webp 1x"
+                  type="image/webp"
+                />
+                <img
+                  src="img/catalog/addit-3.jpg"
+                  alt="Адаптер TWR-17-1"
+                  width="220"
+                  height="110"
+                  loading="lazy"
+                />
+              </picture>
+              <div class="product-card__wrap">
+                <h3 class="product-card__title">Адаптер TWR-17-1</h3>
+                <div class="product-card__prices prices">
+                  <span class="prices__current">Цена: По запросу</span>
+                </div>
+                <div class="product-card__action">
+                  <button
+                    class="product-card__add-to-cart ui-btn ui-btn--accent"
+                    type="button"
+                  >
+                    В корзину
+                  </button>
+                  <a
+                    class="product-card__more-btn ui-btn ui-btn--ghost-blue"
+                    href="#"
+                    >Купить в 1 клик</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- </div> -->
+      </div>
+    </div>
+  </div>
+</div>
