@@ -1,0 +1,124 @@
+<section class="sec-articles sec-offset">
+  <div class="sec-articles__container container">
+    <span class="sec-articles__subtitle sec-subtitle">
+      <svg>
+        <use xlink:href="img/sprite.svg#marker-blue"></use>
+      </svg>
+      <span>Это интересно</span>
+    </span>
+    <!-- Шапка секции -->
+    <div class="sec-articles__heading sec-heading">
+      <h2 class="sec-articles__title sec-title sec-heading__title">
+        Читайте также
+      </h2>
+      <a href="#" class="sec-articles__link link-chevron sec-heading__link">
+        <span>Все статьи</span>
+        <svg class="link-chevron__icon">
+          <use xlink:href="img/sprite.svg#chevrons-right"></use>
+        </svg>
+      </a>
+      <!-- Навигация слайдера -->
+      <div
+        class="slider-nav sec-articles__slider-nav"
+        data-aos="fade-up"
+        data-aos-duration="700"
+        data-aos-delay="400"
+      >
+        <button class="sec-articles__btn-prev slider-nav__btn">
+          <svg class="slider-nav__icon">
+            <use xlink:href="img/sprite.svg#chevron-left"></use>
+          </svg>
+        </button>
+        <button class="sec-articles__btn-next slider-nav__btn">
+          <svg class="slider-nav__icon">
+            <use xlink:href="img/sprite.svg#chevron-right"></use>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Слайдер новостей -->
+    <div class="slider sec-articles__slider swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <article class="article-card" href="#">
+            <a
+              class="article-card__link"
+              href="#"
+              aria-label="Перейти к новости"
+            ></a>
+            <picture class="article-card__img">
+              <!-- <source media="(max-width: 768px)" srcset="img/news/news-img-1-mobile.png" width="343"> -->
+              <!-- <source srcset="fallback-img.webp" type="image/webp"> -->
+              <img
+                src="img/fallback-img.svg"
+                alt="Иллюстрация к новости"
+                width="150"
+                height="324"
+                loading="lazy"
+              />
+            </picture>
+            <div class="article-card__info">
+              <span class="article-card__date">1 сентября 2025</span>
+              <h3 class="article-card__title is-clamp" style="--lines: 2">
+                Особенности молочной центрифуги
+              </h3>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="article-card">
+            <a
+              class="article-card__link"
+              href="#"
+              aria-label="Перейти к новости"
+            ></a>
+            <picture class="article-card__img">
+              <!-- <source media="(max-width: 768px)" srcset="img/news/news-img-2-mobile.png" width="343"> -->
+              <!-- <source srcset="img/fallback-img.webp" type="image/webp"> -->
+              <img
+                src="img/fallback-img.svg"
+                alt="Иллюстрация к новости"
+                width="150"
+                height="46"
+                loading="lazy"
+              />
+            </picture>
+            <div class="article-card__info">
+              <span class="article-card__date">1 сентября 2025</span>
+              <h3 class="article-card__title is-clamp" style="--lines: 2">
+                Для чего нужна молочная центрифуга?
+              </h3>
+            </div>
+          </article>
+        </div>
+        <div class="swiper-slide">
+          <article class="article-card">
+            <a
+              class="article-card__link"
+              href="#"
+              aria-label="Перейти к новости"
+            ></a>
+            <picture class="article-card__img">
+              <!-- <source media="(max-width: 768px)" srcset="img/news/news-img-2-mobile.png" width="343"> -->
+              <!-- <source srcset="img/fallback-img.webp" type="image/webp"> -->
+              <img
+                src="img/fallback-img.svg"
+                alt="Иллюстрация к новости"
+                width="150"
+                height="324"
+                loading="lazy"
+              />
+            </picture>
+            <div class="article-card__info">
+              <span class="article-card__date">2 июня 2026</span>
+              <h3 class="article-card__title is-clamp" style="--lines: 2">
+                Что такое метод Гербера?
+              </h3>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

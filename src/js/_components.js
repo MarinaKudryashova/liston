@@ -13,3 +13,4 @@ import "./components/slider";
 import "./components/header-scroll";
 import "./components/product-slider";
 import "./components/product-accordion";
+import "./components/popap-product";
