@@ -1,0 +1,29 @@
+.delivery {
+  .sec-delivery__descr {
+    max-width: 690px;
+    margin-bottom: 20px;
+
+    p {
+      margin: 0 0 20px;
+    }
+  }
+
+  .sec-delivery__map {
+    margin-bottom: 30px;
+  }
+
+  .sec-delivery__companies {
+    justify-self: end;
+  }
+
+  .sec-delivery__text {
+    margin: 0 0 20px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+
+    // @include mobile {
+    //   font-size: 14px;
+    // }
+  }
+}

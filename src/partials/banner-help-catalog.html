@@ -1,0 +1,74 @@
+<section class="banner-help sec-offset">
+  <picture class="banner-help__bgimg">
+    <source media="(max-width: 769px)" srcset="img/bannerforms/banner-help-mobile.webp" type="image/webp">
+    <source media="(max-width: 769px)" srcset="img/bannerforms/banner-help-mobile.jpg" type="image/jpg">
+    <source srcset="img/bannerforms/banner-help.webp" type="image/webp">
+    <img src="img/bannerforms/banner-help.jpg" width="1920" height="796" alt="" aria-hidden="true">
+  </picture>
+  <div class="banner-help__container container">
+    <div class="banner-help__content">
+      <span class="banner-help__subtitle sec-subtitle">
+        <svg>
+          <use xlink:href="img/sprite.svg#marker-blue"></use>
+        </svg>
+        <span>Бесплатная консультация</span>
+      </span>
+      <h2 class="banner-help__title sec-title">Не знаете, какой дистиллятор выбрать?</h2>
+
+      <!-- Форма -->
+      <div class="banner-help__form form">
+        <div class="form__content">
+          <div class="form__field form-field form-field--required">
+            <label class="form-field__label" for="name">Имя</label>
+            <input class="form-field__input" type="text" id="name" placeholder="Иван">
+            <button class="form-field__btn-clear" type="button" aria-label="Очистить поле ввода">
+              <svg class="header-bottom__icon">
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <span class="form-field__error">Неверное значение</span>
+          </div>
+          <div class="form__field form-field form-field--required">
+            <label class="form-field__label" for="phone">Телефон</label>
+            <input class="form-field__input" type="text" id="phone" placeholder="+7 ___ ___ ____">
+            <button class="form-field__btn-clear" type="button" aria-label="Очистить поле ввода">
+              <svg class="header-bottom__icon">
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <span class="form-field__error">Неверное значение</span>
+          </div>
+          <div class="form__field form-field">
+            <label class="form-field__label" for="email">Почта</label>
+            <input class="form-field__input" type="email" id="email" placeholder="info@gmail.com">
+            <button class="form-field__btn-clear" type="button" aria-label="Очистить поле ввода">
+              <svg class="header-bottom__icon">
+                <use xlink:href="img/sprite.svg#close"></use>
+              </svg>
+            </button>
+            <span class="form-field__error">Неверное значение</span>
+          </div>
+          <div class="form__field form-field">
+            <label class="form-field__label" for="comment">Комментарий</label>
+            <textarea class="form-field__input form-field__input--textarea" id="comment" placeholder="Введите ваш вопрос ..."></textarea>
+          </div>
+          <div class="form__control">
+            <div class="form__agree form-agree">
+              <label class="form-agree__label" for="agree">
+                <input class="form-agree__input visually-hidden" type="checkbox" id="agree">
+                <span>Передавая данные, вы соглашаетесь с <a href="#">Политикой конфиденциальности</a></span>
+                <span class="form-agree__icon">
+                  <svg>
+                    <use xlink:href="img/sprite.svg#check"></use>
+                  </svg>
+                </span>
+              </label>
+            </div>
+            <button class="form__btn ui-btn" type="submit">Заказать звонок специалиста</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>

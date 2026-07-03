@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <h1 class="visually-hidden">Каталог</h1>
+      <div class="catalog-detailed">
+        @include('partials/breadcrumbs-catalog.html')
+        @include('partials/category-area.html')
+        @include('partials/advantages-catalog.html')
+        @include('partials/sec-areas-catalog.html')
+        @include('partials/sec-faq-catalog.html')
+        @include('partials/banner-help-catalog.html')
+        @include('partials/sec-about-catalog.html')
+        @include('partials/banner-contact.html')
+      </div>
+    </main>
+    @include('partials/footer.html')
+    @include('partials/topbtn.html')
+    <!-- @include('partials/modal.html') -->
+    <!-- @include('partials/message.html') -->
+  </div>
+</body>
+
+</html>

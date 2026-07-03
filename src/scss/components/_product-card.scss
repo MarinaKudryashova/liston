@@ -119,6 +119,15 @@
     }
   }
 
+  &__like {
+    &.active {
+      svg {
+        stroke: var(--accent);
+        fill: var(--accent);
+      }
+    }
+  }
+
   &__label {
     position: absolute;
     top: 0;

@@ -1,0 +1,13 @@
+.map {
+  width: 100%;
+  min-height: 658px;
+  background-color: var(--border);
+
+  @include tablet {
+    min-height: 600px;
+  }
+
+  @include mobile {
+    min-height: 540px;
+  }
+}
