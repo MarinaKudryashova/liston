@@ -36,6 +36,8 @@
 @import "components/messengers";
 @import "components/rating";
 @import "components/reviews";
+@import "components/certificates";
+@import "components/pagination";
 @import "components/card-reviews";
 @import "components/product-page";
 @import "components/accordion";
@@ -44,6 +46,12 @@
 @import "components/textredactor";
 @import "components/category-nav";
 @import "components/map";
+@import "components/sec-related";
+@import "components/sec-faq";
+@import "components/popap-product";
+@import "components/news-page";
+@import "components/state-page";
+
 
 // подключения компонентов Главной страницы
 @import "components/header";
