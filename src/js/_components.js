@@ -16,3 +16,4 @@ import "./components/product-slider";
 import "./components/product-accordion";
 import "./components/text-expand";
 import "./components/popap-product";
+import "./components/map";
