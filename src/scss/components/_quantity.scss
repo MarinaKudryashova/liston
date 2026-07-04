@@ -1,0 +1,62 @@
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include mobile {
+    gap: 8px;
+  }
+
+  &__value {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 140%;
+    color: var(--black);
+  }
+
+  &__btn {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent);
+    transition: background-color var(--transition-300);
+
+    @include mobile {
+      width: 32px;
+      height: 32px;
+    }
+
+    &:hover:not([disabled]) {
+      background-color: #1f9ed2;
+    }
+    &:focus-visible:not([disabled]) {
+      background-color: #1f9ed2;
+    }
+
+    &[disabled] {
+      background-color: var(--bg);
+      cursor: default;
+
+      .quantity__icon {
+        stroke: #808080;
+      }
+    }
+  }
+
+  &__icon {
+    width: 19px;
+    height: 19px;
+    stroke: var(--white);
+    stroke-width: 1.5px;
+    fill: none;
+
+    @include mobile {
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

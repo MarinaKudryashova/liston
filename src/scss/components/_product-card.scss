@@ -10,6 +10,11 @@
     padding: 0;
   }
 
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+
   &__img {
     display: flex;
     justify-content: center;
@@ -48,12 +53,17 @@
     margin-bottom: 16px;
   }
 
+  &__quantity {
+    display: none;
+  }
+
   &__action {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 4px;
     margin-top: auto;
+    z-index: 2;
   }
 
   &__add-to-cart,
@@ -76,7 +86,8 @@
   }
 
   &__like,
-  &__compare {
+  &__compare,
+  &__remove {
     @include btn-reset;
     display: flex;
     align-items: center;
@@ -128,6 +139,10 @@
     }
   }
 
+  &__remove {
+    display: none;
+  }
+
   &__label {
     position: absolute;
     top: 0;
@@ -143,6 +158,105 @@
     @include mobile {
       left: 0;
       font-size: 14px;
+    }
+  }
+
+  // Карточка товара в корзине
+  &--cart {
+    flex-direction: row;
+    gap: 20px;
+    padding: 0;
+
+    .product-card__img img {
+      width: 217px;
+      aspect-ratio: 1 / 1;
+
+      @include mobile {
+        width: 90px;
+      }
+    }
+
+    .product-card__title {
+      @include mobile {
+        margin-bottom: 6px;
+        grid-column: span 2;
+      }
+    }
+
+    .product-card__action {
+      display: none;
+    }
+
+    .product-card__wrap {
+      padding: 8px 0 27px;
+
+      @include mobile {
+        display: grid;
+        grid-template-columns: auto 87px;
+        justify-content: space-between;
+        padding: 0;
+      }
+    }
+
+    .product-card__quantity {
+      display: flex;
+      z-index: 3;
+
+      @include mobile {
+        justify-self: end;
+      }
+    }
+
+    .product-card__prices {
+      margin-top: 0;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+
+      @include mobile {
+        margin-bottom: 0;
+      }
+      @include small-mobile {
+        gap: 0;
+      }
+    }
+
+    .prices__current {
+      @include mobile {
+        font-size: 18px;
+      }
+    }
+    .prices__old {
+      @include mobile {
+        font-size: 14px;
+      }
+    }
+
+    .product-card__title {
+      max-width: 70%;
+
+      @include mobile {
+        max-width: 100%;
+      }
+    }
+
+    .product-card__btns {
+      right: 0;
+      gap: 0;
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .product-card__remove {
+      display: flex;
+    }
+    .product-card__remove, .product-card__like {
+      width: 40px;
+      height: 40px;
+      background-color: transparent;
+    }
+    .product-card__compare {
+      display: none;
     }
   }
 }
