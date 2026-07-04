@@ -1,0 +1,32 @@
+.cart-empty {
+  &__title {
+    margin-bottom: 40px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__text {
+    margin: 0 0 40px;
+
+    @include tablet {
+      margin-bottom: 30px;
+    }
+
+    @include mobile {
+      margin-bottom: 20px;
+    }
+  }
+  &__link {
+    max-width: 194px;
+
+    @include mobile {
+      max-width: 100%;
+    }
+  }
+}

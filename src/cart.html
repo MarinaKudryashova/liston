@@ -7,11 +7,14 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      <h1 class="visually-hidden">Каталог</h1>
-      @include('partials/breadcrumbs-catalog.html')
-      @include('partials/sec-categories.html')
-      @include('partials/advantages.html')
-      @include('partials/sec-about-cat.html')
+      <h1 class="visually-hidden">Корзина</h1>
+      @include('partials/breadcrumbs-cart.html')
+      @include('partials/cart-content.html')
+      <!-- @include('partials/cart-empty-content.html') -->
+
+      <!-- Надо тоже скрывать, если корзина пустая -->
+      @include('partials/contact-form.html')
+
       @include('partials/banner-contact.html')
     </main>
     @include('partials/footer.html')
