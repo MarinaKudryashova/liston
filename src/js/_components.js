@@ -18,3 +18,5 @@ import "./components/text-expand";
 import "./components/popup-product";
 import "./components/map";
 import "./components/quantity";
+import "./components/tabs";
+import "./components/comparison";

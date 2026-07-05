@@ -70,5 +70,9 @@
 
   .form__btn {
     max-width: 340px;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 }
