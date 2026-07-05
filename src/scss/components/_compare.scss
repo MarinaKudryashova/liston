@@ -1,0 +1,43 @@
+.compare {
+  &__heading {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    padding: 20px 0 16px;
+    margin-bottom: 60px;
+  }
+
+  &__products {
+    position: relative;
+    width: calc(3 * 333px + 2 * 20px);
+    overflow: hidden;
+  }
+
+  &__product-list {
+    @include list-reset;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__product-item {
+    flex: 0 0 333px;
+  }
+
+  &__slider-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    right: 0;
+    z-index: 3;
+    justify-content: space-between;
+  }
+}

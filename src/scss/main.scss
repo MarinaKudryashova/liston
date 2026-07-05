@@ -54,6 +54,8 @@
 @import "components/quantity";
 @import "components/contact-form";
 @import "components/cart-order";
+@import "components/compare";
+@import "components/compare-toggle";
 
 // подключения компонентов Главной страницы
 @import "components/header";
@@ -92,6 +94,7 @@
 @import "components/cart-content";
 @import "components/cart-empty";
 @import "components/sec-partnership";
+@import "components/sec-compare";
 
 // 404
 @import "components/error-404";
