@@ -1,0 +1,135 @@
+<section class="cart-content sec-offset">
+  <div class="cart-content__container container">
+    <h2 class="cart-content__title sec-title">Корзина</h2>
+
+    <div class="cart-content__content">
+      <ul class="cart-content__products">
+        <li class="cart-content__item">
+          <div class="product-card product-card--cart">
+            <a href="product-card.html" class="product-card__link"></a>
+            <picture class="product-card__img">
+              <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
+              <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
+              <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
+            </picture>
+            <div class="product-card__wrap">
+              <span class="product-card__category">Дистиллятор</span>
+              <h3 class="product-card__title">Электрический дистиллятор воды Liston A1125</h3>
+              <div class="product-card__prices prices">
+                <span class="prices__current">125 500 ₽</span>
+                <span class="prices__old">100000 ₽</span>
+              </div>
+              <div class="product-card__quantity quantity">
+                <button class="quantity__btn quantity__btn--minus" disabled aria-label="Уменьшить количество"
+                  type="button">
+                  <svg class="quantity__icon" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
+                  </svg>
+                </button>
+                <span class="quantity__value" aria-live="polite">1</span>
+                <button class="quantity__btn quantity__btn--plus" aria-label="Увеличить количество" type="button">
+                  <svg class="quantity__icon" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__action">
+                <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
+                <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
+              </div>
+            </div>
+            <!-- Кнопки Избранное и Сравнение -->
+            <div class="product-card__btns">
+              <button class="product-card__like" aria-label="Добавить товар в избранное">
+                <svg>
+                  <use xlink:href="img/sprite.svg#wishlist"></use>
+                </svg>
+              </button>
+              <button class="product-card__compare" aria-label="Добавить товар в сравнение">
+                <svg>
+                  <use xlink:href="img/sprite.svg#compare"></use>
+                </svg>
+              </button>
+              <button class="product-card__remove" aria-label="Удалить товар из корзины">
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-bin"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </li>
+        <li class="cart-content__item">
+          <div class="product-card product-card--cart">
+            <a href="product-card.html" class="product-card__link"></a>
+            <picture class="product-card__img">
+              <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
+              <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
+              <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
+            </picture>
+            <div class="product-card__wrap">
+              <span class="product-card__category">Дистиллятор</span>
+              <h3 class="product-card__title">Электрический дистиллятор воды Liston A1125</h3>
+              <div class="product-card__prices prices">
+                <span class="prices__current">125 500 ₽</span>
+                <span class="prices__old">100000 ₽</span>
+              </div>
+              <div class="product-card__quantity quantity">
+                <button class="quantity__btn quantity__btn--minus" disabled aria-label="Уменьшить количество"
+                  type="button">
+                  <svg class="quantity__icon" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-minus"></use>
+                  </svg>
+                </button>
+                <span class="quantity__value" aria-live="polite">1</span>
+                <button class="quantity__btn quantity__btn--plus" aria-label="Увеличить количество" type="button">
+                  <svg class="quantity__icon" aria-hidden="true">
+                    <use xlink:href="img/sprite.svg#icon-plus"></use>
+                  </svg>
+                </button>
+              </div>
+              <div class="product-card__action">
+                <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
+                <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
+              </div>
+            </div>
+            <!-- Кнопки Избранное и Сравнение -->
+            <div class="product-card__btns">
+              <button class="product-card__like" aria-label="Добавить товар в избранное">
+                <svg>
+                  <use xlink:href="img/sprite.svg#wishlist"></use>
+                </svg>
+              </button>
+              <button class="product-card__compare" aria-label="Добавить товар в сравнение">
+                <svg>
+                  <use xlink:href="img/sprite.svg#compare"></use>
+                </svg>
+              </button>
+              <button class="product-card__remove" aria-label="Удалить товар из корзины">
+                <svg>
+                  <use xlink:href="img/sprite.svg#icon-bin"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="cart-content__order">
+        <div class="cart-order">
+          <div class="cart-order__infodata">
+            <span id="total-quantity">Товары, 3 шт</span>
+            <span id="cart-total">293 000 ₽</span>
+          </div>
+          <div class="cart-order__discount">
+            <span>Скидка</span>
+            <span id="cart-total-discount">- 9000 ₽</span>
+          </div>
+          <div class="cart-order__total">
+            <span>Итого к оплате</span>
+            <span id="cart-order-total">284 000 ₽</span>
+          </div>
+          <a href="#contact-form" class="cart-order__checkout ui-btn">Оформить заказ</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -10,6 +10,7 @@
   padding: 18.5px 0;
   border-bottom: 1px solid var(--white-24);
   z-index: 20;
+  background-color: var(--white);
   transition: background-color var(--transition-300), transform var(--transition-300);
 
   @include mobile {
@@ -158,6 +159,30 @@
 
       @include mobile {
         display: block;
+      }
+    }
+  }
+
+  & .ui-iconlink--fill {
+    .ui-iconlink__icon {
+      fill: var(--link-color);
+      stroke: none;
+
+      @include mobile {
+        fill: var(--grey);
+      }
+    }
+
+    &:hover {
+      .ui-iconlink__icon {
+        fill: var(--link-hover);
+        stroke: none;
+      }
+    }
+    &:focus {
+      .ui-iconlink__icon {
+        fill: var(--link-hover);
+        stroke: none;
       }
     }
   }
@@ -317,6 +342,16 @@
   }
 
   &:has(.burger.is-open) {
+    .header__searchbar .searchbar__btn svg {
+      stroke: var(--white);
+    }
+    .ui-iconlink__icon {
+      stroke: var(--white);
+    }
+    .ui-iconlink__link-count {
+      color: var(--accent);
+      background-color: var(--white);
+    }
     .nav .ui-link  {
       color: var(--white);
     }
@@ -376,6 +411,7 @@
     --link-color: var(--white);
     --link-hover: var(--accent);
     --link-border-color: var(--white-24);
+    background-color: transparent;
 
     & .logo__img--light {
       display: block;

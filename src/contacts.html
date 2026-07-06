@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <h1 class="visually-hidden">Контакты</h1>
+      @include('partials/breadcrumbs-contacts.html')
+      @include('partials/sec-contacts.html')
+      <div class="map" data-center="55.015697, 36.775734" data-hint="LISTON"></div>
+      @include('partials/banner-contact.html')
+    </main>
+    @include('partials/footer.html')
+    @include('partials/topbtn.html')
+    @include('partials/modal.html')
+    <!-- @include('partials/message.html') -->
+  </div>
+</body>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU"></script>
+<!-- https://api-maps.yandex.ru/2.1/?apikey=372942ca-4293-49a7-b932-3be172c26f71&lang=ru_RU -->
+
+</html>

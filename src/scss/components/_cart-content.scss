@@ -1,0 +1,37 @@
+.cart-content {
+  &__content {
+    position: relative;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: auto 453px;
+
+    @include small-desktop {
+      grid-template-columns: auto 380px;
+    }
+
+    @include tablet {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+
+  &__products {
+    @include list-reset;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  &__order {
+    position: sticky;
+    right: 0;
+    top: 90px;
+    height: max-content;
+
+    @include tablet {
+      max-width: 500px;
+    }
+  }
+}
+

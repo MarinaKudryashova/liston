@@ -1,0 +1,79 @@
+.textredactor {
+  h2 {
+    margin: 40px 0 30px;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 120%;
+
+    @include tablet {
+      font-size: 24px;
+    }
+
+    @include mobile {
+      margin: 30px 0 10px;
+      font-size: 20px;
+    }
+  }
+
+  h3 {
+    margin: 30px 0 20px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+
+    @include tablet {
+      font-size: 22px;
+    }
+
+    @include mobile {
+      margin: 20px 0 10px;
+      font-size: 18px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  ul {
+    margin: 20px 0;
+    padding-left: 28px;
+
+    @include mobile {
+      margin: 16px 0;
+    }
+  }
+
+  li {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  a {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    color: var(--accent);
+    text-decoration: underline;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

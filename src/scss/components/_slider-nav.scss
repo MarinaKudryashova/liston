@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+  pointer-events: none;
 
   &__btn {
     @include btn-reset;
@@ -12,6 +13,7 @@
     height: 43px;
     border-radius: 50%;
     background-color: var(--bg);
+    pointer-events: auto;
     transition: background-color var(--transition-300);
 
     @include mobile {

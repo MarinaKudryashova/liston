@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main">
+      <h1 class="visually-hidden">Корзина</h1>
+      @include('partials/breadcrumbs-cart.html')
+      @include('partials/cart-content.html')
+      <!-- @include('partials/cart-empty-content.html') -->
+
+      <!-- Надо тоже скрывать, если корзина пустая -->
+      @include('partials/contact-form.html')
+
+      @include('partials/banner-contact.html')
+    </main>
+    @include('partials/footer.html')
+    @include('partials/topbtn.html')
+    @include('partials/modal.html')
+    <!-- @include('partials/message.html') -->
+  </div>
+</body>
+
+</html>

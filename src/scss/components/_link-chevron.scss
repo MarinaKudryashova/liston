@@ -49,5 +49,10 @@
         transform: rotate(90deg) translateX(6px);
       }
     }
+    &:focus {
+      .link-chevron__icon {
+        transform: rotate(90deg) translateX(6px);
+      }
+    }
   }
 }
