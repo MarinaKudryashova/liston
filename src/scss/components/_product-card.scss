@@ -162,6 +162,24 @@
 
   &__remove {
     display: none;
+
+    &:hover {
+      svg {
+        fill: var(--accent);
+        stroke: none;
+      }
+    }
+    &:focus {
+      outline: none;
+      svg {
+        fill: var(--accent);
+      }
+    }
+
+    svg {
+      stroke: none;
+      fill: var(--grey);
+    }
   }
 
   &__label {
