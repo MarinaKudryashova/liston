@@ -163,6 +163,30 @@
     }
   }
 
+  & .ui-iconlink--fill {
+    .ui-iconlink__icon {
+      fill: var(--link-color);
+      stroke: none;
+
+      @include mobile {
+        fill: var(--grey);
+      }
+    }
+
+    &:hover {
+      .ui-iconlink__icon {
+        fill: var(--link-hover);
+        stroke: none;
+      }
+    }
+    &:focus {
+      .ui-iconlink__icon {
+        fill: var(--link-hover);
+        stroke: none;
+      }
+    }
+  }
+
   &__link {
     @include mobile {
       display: none;

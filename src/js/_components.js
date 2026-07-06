@@ -1,4 +1,4 @@
-// import './components/modal';
+import './components/modal';
 // import './components/message';
 import "./components/topbtn";
 import "./components/clear-input";
@@ -20,3 +20,4 @@ import "./components/map";
 import "./components/quantity";
 import "./components/tabs";
 import "./components/comparison";
+import "./components/cookie-notice";

@@ -12,6 +12,13 @@
   @include btn-reset;
   color: var(--iconlink-color);
 
+  &--fill {
+    .ui-iconlink__icon {
+      stroke: none;
+      fill: var(--iconlink-color);
+    }
+  }
+
   &__icon {
     width: 24px;
     height: 24px;
@@ -19,7 +26,7 @@
     fill: none;
     stroke-width: 1.5px;
     stroke: var(--iconlink-color);
-    transition: stroke var(--transition-300);
+    transition: stroke var(--transition-300), fill var(--transition-300);
   }
 
   &__text {
