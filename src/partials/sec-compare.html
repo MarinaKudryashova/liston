@@ -33,193 +33,23 @@
           <div class="sec-compare__body compare">
 
             <!-- Верхний блок sticky -->
-            <div class="compare__heading">
+            <!-- <div class="compare__heading"> -->
 
               <!-- Показать только различия -->
-              <div class="compare__toggle compare-toggle">
+              <!-- <div class="compare__toggle compare-toggle">
                 <label for="different" class="compare-toggle__label">
                   <input class="compare-toggle__input visually-hidden" type="checkbox" id="different" data-filter="different">
                   <span class="compare-toggle__slider"></span>
                   <span class="compare-toggle__label-text">Показать только различия</span>
                 </label>
-              </div>
-
-              <!-- Товары для сравнения -->
-               <div class="compare__products">
-                <div class="slider-nav compare__slider-nav" data-aos="fade-up" data-aos-duration="700" data-aos-delay="400">
-                  <button class="compare__btn-prev slider-nav__btn">
-                    <svg class="slider-nav__icon">
-                      <use xlink:href="img/sprite.svg#chevron-left"></use>
-                    </svg>
-                  </button>
-                  <button class="compare__btn-next slider-nav__btn">
-                    <svg class="slider-nav__icon">
-                      <use xlink:href="img/sprite.svg#chevron-right"></use>
-                    </svg>
-                  </button>
-                </div>
-                <ul class="compare__product-list">
-                  <li class="compare__product-item">
-                    <div class="product-card product-card--compare">
-                      <a href="product-card.html" class="product-card__link"></a>
-                      <picture class="product-card__img">
-                        <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
-                        <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
-                        <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
-                      </picture>
-                      <div class="product-card__wrap">
-                        <span class="product-card__category">Дистиллятор</span>
-                        <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
-                        <div class="product-card__prices prices">
-                          <span class="prices__current">75 000 ₽</span>
-                          <span class="prices__old">100000 ₽</span>
-                        </div>
-                        <div class="product-card__action">
-                          <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
-                          <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
-                          <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
-                        </div>
-                      </div>
-                      <!-- Кнопки Избранное и Сравнение -->
-                      <div class="product-card__btns">
-                        <button class="product-card__like" aria-label="Добавить товар в избранное">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#wishlist"></use>
-                          </svg>
-                        </button>
-                        <button class="product-card__compare" aria-label="Добавить товар в сравнение">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#compare"></use>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- Лейбл -->
-                      <span class="product-card__label">-12%</span>
-                    </div>
-                  </li>
-                  <li class="compare__product-item">
-                    <div class="product-card product-card--compare">
-                      <a href="product-card.html" class="product-card__link"></a>
-                      <picture class="product-card__img">
-                        <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
-                        <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
-                        <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
-                      </picture>
-                      <div class="product-card__wrap">
-                        <span class="product-card__category">Дистиллятор</span>
-                        <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
-                        <div class="product-card__prices prices">
-                          <span class="prices__current">75 000 ₽</span>
-                          <span class="prices__old">100000 ₽</span>
-                        </div>
-                        <div class="product-card__action">
-                          <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
-                          <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
-                          <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
-                        </div>
-                      </div>
-                      <!-- Кнопки Избранное и Сравнение -->
-                      <div class="product-card__btns">
-                        <button class="product-card__like" aria-label="Добавить товар в избранное">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#wishlist"></use>
-                          </svg>
-                        </button>
-                        <button class="product-card__compare" aria-label="Добавить товар в сравнение">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#compare"></use>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- Лейбл -->
-                      <span class="product-card__label">-12%</span>
-                    </div>
-                  </li>
-                  <li class="compare__product-item">
-                    <div class="product-card product-card--compare">
-                      <a href="product-card.html" class="product-card__link"></a>
-                      <picture class="product-card__img">
-                        <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
-                        <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
-                        <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
-                      </picture>
-                      <div class="product-card__wrap">
-                        <span class="product-card__category">Дистиллятор</span>
-                        <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
-                        <div class="product-card__prices prices">
-                          <span class="prices__current">75 000 ₽</span>
-                          <span class="prices__old">100000 ₽</span>
-                        </div>
-                        <div class="product-card__action">
-                          <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
-                          <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
-                          <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
-                        </div>
-                      </div>
-                      <!-- Кнопки Избранное и Сравнение -->
-                      <div class="product-card__btns">
-                        <button class="product-card__like" aria-label="Добавить товар в избранное">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#wishlist"></use>
-                          </svg>
-                        </button>
-                        <button class="product-card__compare" aria-label="Добавить товар в сравнение">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#compare"></use>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- Лейбл -->
-                      <span class="product-card__label">-12%</span>
-                    </div>
-                  </li>
-                  <li class="compare__product-item">
-                    <div class="product-card product-card--compare">
-                      <a href="product-card.html" class="product-card__link"></a>
-                      <picture class="product-card__img">
-                        <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
-                        <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
-                        <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
-                      </picture>
-                      <div class="product-card__wrap">
-                        <span class="product-card__category">Дистиллятор</span>
-                        <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
-                        <div class="product-card__prices prices">
-                          <span class="prices__current">75 000 ₽</span>
-                          <span class="prices__old">100000 ₽</span>
-                        </div>
-                        <div class="product-card__action">
-                          <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
-                          <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
-                          <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
-                        </div>
-                      </div>
-                      <!-- Кнопки Избранное и Сравнение -->
-                      <div class="product-card__btns">
-                        <button class="product-card__like" aria-label="Добавить товар в избранное">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#wishlist"></use>
-                          </svg>
-                        </button>
-                        <button class="product-card__compare" aria-label="Добавить товар в сравнение">
-                          <svg>
-                            <use xlink:href="img/sprite.svg#compare"></use>
-                          </svg>
-                        </button>
-                      </div>
-                      <!-- Лейбл -->
-                      <span class="product-card__label">-12%</span>
-                    </div>
-                  </li>
-                </ul>
-               </div>
-            </div>
+              </div> -->
 
             <!-- Таблица характеристик -->
             <div class="compare__table-wrapper">
               <table class="compare__table">
                 <tbody>
-                  <tr>
+                  <!-- Первая строка таблицы с товарами -->
+                  <tr class="first-row">
                     <th>
                       <div class="compare__toggle compare-toggle">
                         <label for="different" class="compare-toggle__label">
@@ -229,6 +59,256 @@
                         </label>
                       </div>
                     </th>
+                    <td>
+                      <div class="product-card product-card--compare">
+                        <a href="product-card.html" class="product-card__link"></a>
+                        <picture class="product-card__img">
+                          <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
+                          <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
+                          <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
+                        </picture>
+                        <div class="product-card__wrap">
+                          <span class="product-card__category">Дистиллятор</span>
+                          <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
+                          <div class="product-card__prices prices">
+                            <span class="prices__current">75 000 ₽</span>
+                            <span class="prices__old">100000 ₽</span>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
+                            <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
+                            <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
+                          </div>
+                        </div>
+                        <!-- Кнопки Избранное и Сравнение -->
+                        <div class="product-card__btns">
+                          <button class="product-card__like" aria-label="Добавить товар в избранное">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#wishlist"></use>
+                            </svg>
+                          </button>
+                          <button class="product-card__compare" aria-label="Добавить товар в сравнение">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <!-- Лейбл -->
+                        <span class="product-card__label">-12%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="product-card product-card--compare">
+                        <a href="product-card.html" class="product-card__link"></a>
+                        <picture class="product-card__img">
+                          <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
+                          <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
+                          <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
+                        </picture>
+                        <div class="product-card__wrap">
+                          <span class="product-card__category">Дистиллятор</span>
+                          <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
+                          <div class="product-card__prices prices">
+                            <span class="prices__current">75 000 ₽</span>
+                            <span class="prices__old">100000 ₽</span>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
+                            <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
+                            <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
+                          </div>
+                        </div>
+                        <!-- Кнопки Избранное и Сравнение -->
+                        <div class="product-card__btns">
+                          <button class="product-card__like" aria-label="Добавить товар в избранное">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#wishlist"></use>
+                            </svg>
+                          </button>
+                          <button class="product-card__compare" aria-label="Добавить товар в сравнение">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <!-- Лейбл -->
+                        <span class="product-card__label">-12%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="product-card product-card--compare">
+                        <a href="product-card.html" class="product-card__link"></a>
+                        <picture class="product-card__img">
+                          <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
+                          <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
+                          <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
+                        </picture>
+                        <div class="product-card__wrap">
+                          <span class="product-card__category">Дистиллятор</span>
+                          <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
+                          <div class="product-card__prices prices">
+                            <span class="prices__current">75 000 ₽</span>
+                            <span class="prices__old">100000 ₽</span>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
+                            <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
+                            <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
+                          </div>
+                        </div>
+                        <!-- Кнопки Избранное и Сравнение -->
+                        <div class="product-card__btns">
+                          <button class="product-card__like" aria-label="Добавить товар в избранное">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#wishlist"></use>
+                            </svg>
+                          </button>
+                          <button class="product-card__compare" aria-label="Добавить товар в сравнение">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <!-- Лейбл -->
+                        <span class="product-card__label">-12%</span>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="product-card product-card--compare">
+                        <a href="product-card.html" class="product-card__link"></a>
+                        <picture class="product-card__img">
+                          <source media="(max-width: 768px)" srcset="img/catalog/product-img-mobile.png" width="343">
+                          <source srcset="img/catalog/product-img.webp 1x" type="image/webp">
+                          <img src="img/catalog/product-img.png" alt="Фото товара" width="334" height="331" loading="lazy">
+                        </picture>
+                        <div class="product-card__wrap">
+                          <span class="product-card__category">Дистиллятор</span>
+                          <h3 class="product-card__title">Дистиллятор электрический со встроенным сборником Liston A 1104</h3>
+                          <div class="product-card__prices prices">
+                            <span class="prices__current">75 000 ₽</span>
+                            <span class="prices__old">100000 ₽</span>
+                          </div>
+                          <div class="product-card__action">
+                            <button class="product-card__add-to-cart ui-btn ui-btn--accent" type="button">В корзину</button>
+                            <a class="product-card__more-btn ui-btn ui-btn--ghost-blue" href="product-card.html">Подробнее</a>
+                            <button class="product-card__remove-compare" type="button">Удалить из сравнения</button>
+                          </div>
+                        </div>
+                        <!-- Кнопки Избранное и Сравнение -->
+                        <div class="product-card__btns">
+                          <button class="product-card__like" aria-label="Добавить товар в избранное">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#wishlist"></use>
+                            </svg>
+                          </button>
+                          <button class="product-card__compare" aria-label="Добавить товар в сравнение">
+                            <svg>
+                              <use xlink:href="img/sprite.svg#compare"></use>
+                            </svg>
+                          </button>
+                        </div>
+                        <!-- Лейбл -->
+                        <span class="product-card__label">-12%</span>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>Производительность</th>
+                    <td>4 л/ч</td>
+                    <td>10 л/ч</td>
+                    <td>10 л/ч</td>
+                    <td>15 л/ч</td>
+                  </tr>
+                  <tr>
+                    <th>Вместимость встроенного бака-накопителя</th>
+                    <td>на 8 л</td>
+                    <td>на 20 л</td>
+                    <td>на 20 л</td>
+                    <td>на 10 л</td>
+                  </tr>
+                  <tr>
+                    <th>Удельный расход воды</th>
+                    <td>не более 60 л/ч (15 л / л дистиллята)</td>
+                    <td>не более 150 л/ч (15 л / л дистиллята)</td>
+                    <td>не более 150 л/ч (15 л / л дистиллята)</td>
+                    <td>не более 100 л/ч (15 л / л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                  </tr>
+                  <tr>
+                    <th>Потребляемая мощность</th>
+                    <td>3 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>7,5 кВт/ч (0,75 кВт/л дистиллята)</td>
+                    <td>5 кВт/ч (0,75 кВт/л дистиллята)</td>
                   </tr>
                 </tbody>
               </table>
