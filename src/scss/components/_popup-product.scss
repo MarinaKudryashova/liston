@@ -27,8 +27,7 @@
   min-width: 320px;
 
   max-height: 95vh; // Ограничиваем высоту окна
-  overflow: hidden; // Важно: скролл делаем ВНУТРИ, а не тут
-
+  overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
   position: relative;
   transform: translateY(-20px);
@@ -36,6 +35,10 @@
 
   .modal--is-open & {
     transform: translateY(0);
+  }
+
+  @include mobile {
+    max-height: 100vh;
   }
 }
 
@@ -70,6 +73,39 @@
   transition: stroke 0.2s ease;
 }
 
+.modal__back {
+  display: none;
+}
+
+// На мобилках — показываем стрелку, скрываем крестик
+@include tablet-xl {
+  .modal__close {
+    display: none;
+  }
+
+  .modal__back {
+    display: flex;
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 10;
+    align-items: center;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--grey);
+    padding: 0;
+
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: var(--grey);
+    }
+  }
+}
+
 // --- Контент: две колонки (картинка + инфо) ---
 .modal__content {
   display: flex;
@@ -88,6 +124,15 @@
     width: 1px;
     background-color: var(--accent);
   }
+
+  @include tablet-xl {
+    flex-direction: column;
+    gap: 10px;
+
+    &::after {
+      display: none; // убираем вертикальную линию
+    }
+  }
 }
 
 // --- Левая колонка: картинка ---
@@ -96,6 +141,12 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
+
+  @include tablet-xl {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: 0px 16px;
+  }
 }
 
 .modal__image-wrap {
@@ -111,6 +162,12 @@
   max-height: 1000px;
   object-fit: contain;
   display: block;
+
+  @include tablet-xl {
+    width: 100%;
+    height: auto;
+    max-height: 230px;
+  }
 }
 
 // Кнопки поверх картинки
@@ -121,27 +178,66 @@
   display: flex;
   gap: 12px;
   z-index: 5;
+
+  @media (max-width: 1280px) {
+    right: -10px;
+  }
+
+  @include tablet {
+    right: 10px;
+  }
+
+  @include tablet-xl {
+    right: -43%;
+    top: 12px;
+  }
+
+  @media (max-width: 475px) {
+    right: -43px;
+  }
+
+  @include small-mobile {
+    right: -28px;
+  }
 }
 
 // --- Правая колонка: информация ---
 .modal__info {
   padding: 40px 50px 0 0;
-  flex: 1 1 auto; // Занимает всё свободное место
+  flex: 1 1 auto;
   position: relative;
-  min-width: 0; // КРИТИЧНО: без этого внутренний скролл ломается в flex
+  min-width: 0;
+
+  @include tablet-xl {
+    padding: 0 20px 20px 20px;
+  }
 }
 
 // Шапка (категория, заголовок, описание, цена, кнопки)
 .modal__info-wrap {
   display: flex;
   gap: 38px;
-  flex-shrink: 0; // Запрещаем сжиматься
-  margin-bottom: 24px; // Отступ до секции аксессуаров
+  flex-shrink: 0;
+  margin-bottom: 24px;
+
+  @include small-desktop {
+    gap: 20px;
+  }
+
+  @include tablet-xl {
+    flex-direction: column;
+    gap: 15px;
+  }
 }
 
 .modal__info-order {
   flex-shrink: 0;
   max-width: 200px;
+
+  @include tablet-xl {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 // Текстовые элементы
@@ -152,6 +248,11 @@
   font-size: 16px;
   line-height: 120%;
   color: var(--grey);
+
+  @include tablet-xl {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
 }
 
 .modal__title {
@@ -160,6 +261,15 @@
   font-size: 32px;
   line-height: 100%;
   color: var(--black);
+
+  @include small-desktop {
+    font-size: 28px;
+  }
+
+  @include tablet {
+    font-size: 24px;
+    margin: 0 0 15px 0;
+  }
 }
 
 .modal__desc {
@@ -169,6 +279,11 @@
 
   p {
     margin: 0 0 16px 0;
+
+    @include small-desktop {
+      font-size: 14px;
+      margin: 0;
+    }
   }
 }
 
@@ -179,6 +294,10 @@
   margin: 23px 0;
   color: var(--red);
   white-space: nowrap;
+
+  @include tablet-xl {
+    margin: 0 0 23px 0;
+  }
 }
 
 .modal__actions {
@@ -186,11 +305,15 @@
   flex-wrap: wrap;
   gap: 4px;
   margin-bottom: 40px;
+
+  @include tablet-xl {
+    margin-bottom: 30px;
+  }
 }
 
 // Заголовок секции аксессуаров
 .modal__section-title {
-  margin: 40px 0 30px 0; // Отступ сверху — вместо .modal__accessories-section
+  margin: 40px 0 30px 0;
   font-size: 24px;
   color: var(--black);
   position: relative;
@@ -204,16 +327,32 @@
     height: 1px;
     background-color: var(--accent);
   }
+
+  @include tablet-xl {
+    font-size: 20px;
+    margin: 20px 0 16px 0;
+
+    &::before {
+      top: -16px;
+      left: -20px; /* ← сдвигаем влево за пределы паддинга */
+      right: -20px; /* ← сдвигаем вправо за пределы паддинга */
+      width: calc(100% + 40px);
+    }
+  }
 }
 
 // Блок со скроллом: только здесь будет прокрутка
 .modal__catalog-scroll {
-  flex: 1 1 auto; // занимает всё свободное место по высоте
-  overflow-y: auto; // включает вертикальный скролл
+  flex: 1 1 auto;
+  overflow-y: auto;
   padding-right: 10px;
   padding-bottom: 20px;
 
-  max-height: 400px; // без этого не появляется скролл внутри
+  max-height: 400px;
+
+  @include tablet-xl {
+    max-height: 300px;
+  }
 }
 
 // Сетка карточек

@@ -1,0 +1,54 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+  background-color: var(--accent-light);
+  margin: 0 0 50px;
+
+  @include mobile {
+    padding: 20px;
+    margin: 0 0 40px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+  }
+  &__img {
+    width: 80px;
+    height: 80px;
+    flex-shrink: 0;
+    display: block;
+
+    @include mobile {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__text {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--black);
+    margin: 0;
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+
+  &__author {
+    text-align: right;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    font-style: normal;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+}

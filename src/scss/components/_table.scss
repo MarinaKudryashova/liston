@@ -1,0 +1,100 @@
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  overflow-x: auto;
+
+  @include small-tablet {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  // Общие стили для всех ячеек
+  th,
+  td {
+    padding: 28px 16px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    text-align: left;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    color: var(--black);
+
+    @include small-tablet {
+      padding: 16px;
+      font-size: 12px;
+      min-width: 168px;
+      white-space: normal;
+    }
+  }
+
+  // Шапка таблицы
+  thead {
+    th {
+      background: rgba(41, 173, 227, 0.1);
+      font-weight: 700;
+    }
+  }
+
+  // Пустая ячейка
+  &__empty {
+    background: transparent !important;
+  }
+
+  // Обычные ячейки
+  &__cell {
+    background: transparent;
+  }
+
+  // ПЕРВАЯ КОЛОНКА
+  &__row-header {
+    &.table__row-header {
+      background: rgba(41, 173, 227, 0.1);
+      font-weight: 700;
+      padding: 28px 97px 28px 16px;
+
+      @include small-tablet {
+        white-space: normal; // переопределяем
+        padding: 16px 32px 16px 16px;
+      }
+    }
+
+    &-text {
+      display: inline-block;
+      max-width: 214px;
+      word-wrap: break-word; // перенос слов
+      word-break: break-word; // для длинных слов
+
+      @include mobile {
+        max-width: 140px;
+      }
+    }
+  }
+
+  // Стили для скролл-бара
+  // Для Firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgba(41, 173, 227, 0.3) rgba(238, 238, 238, 0.5);
+
+  // Для WebKit (Chrome, Safari, Edge)
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: rgba(238, 238, 238, 0.5);
+    border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(41, 173, 227, 0.25);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(41, 173, 227, 0.4);
+  }
+}

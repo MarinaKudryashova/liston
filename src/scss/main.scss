@@ -51,6 +51,9 @@
 @import "components/popup-product";
 @import "components/news-page";
 @import "components/state-page";
+@import "components/sec-impotant";
+@import "components/quote";
+@import "components/table";
 @import "components/quantity";
 @import "components/contact-form";
 @import "components/cart-order";
@@ -59,8 +62,6 @@
 @import "components/message-success";
 @import "components/compare-toggle";
 @import "components/cookie-notice";
-
-// подключения компонентов Главной страницы
 @import "components/header";
 @import "components/promo";
 @import "components/sec-catalog";
@@ -77,7 +78,6 @@
 @import "components/sec-articles";
 @import "components/banner-contact";
 @import "components/footer";
-
 
 // компоненты других страниц
 @import "components/sec-categories";

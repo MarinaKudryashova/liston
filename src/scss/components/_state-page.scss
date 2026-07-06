@@ -1,12 +1,16 @@
 .state-page {
   &__title {
-    margin-bottom: 30px;
+    margin-bottom: 70px;
+
+    @include mobile {
+      margin-bottom: 50px;
+    }
   }
 
   &__wrap {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 27px;
+    margin-bottom: 24px;
   }
 
   &__wrap-date {
@@ -15,12 +19,20 @@
     line-height: 120%;
     text-transform: uppercase;
     color: var(--accent);
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__wrap-view {
     display: flex;
     gap: 10px;
     align-items: center;
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__wrap-icon {
@@ -33,6 +45,10 @@
     font-size: 16px;
     line-height: 120%;
     color: var(--black-24);
+
+    @include mobile {
+      font-size: 14px;
+    }
   }
 
   &__content {
@@ -45,7 +61,14 @@
     font-size: 24px;
     line-height: 120%;
     color: var(--black);
-    margin-bottom: 50px;
+
+    @include tablet-xl {
+      font-size: 21px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &__content-text p {
@@ -54,28 +77,54 @@
   }
 
   &__text-title {
-    margin: 0;
+    margin: 50px 0 30px 0;
     padding: 0;
     font-weight: 600;
     font-size: 32px;
     line-height: 120%;
+
+    @include tablet-xl {
+      font-size: 26px;
+      margin: 40px 0 20px 0;
+    }
+
+    @include mobile {
+      font-size: 20px;
+      margin: 30px 0 10px 0;
+    }
   }
 
   &__text-desc {
     padding: 0;
-    margin: 0;
+    margin: 0 0 30px 0;
     font-weight: 500;
     font-size: 16px;
     line-height: 120%;
-    margin: 30px 0;
+
+    @include mobile {
+      margin: 0 0 15px 0;
+      font-size: 14px;
+    }
+  }
+
+  &__text-desc--nodown {
+    margin-bottom: 0;
   }
 
   &__text-header {
-    margin: 0;
+    margin: 0 0 20px 0;
     padding: 0;
     font-weight: 600;
     font-size: 24px;
     line-height: 120%;
+
+    @include tablet-xl {
+      font-size: 20px;
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
   }
 
   &__content-img {
@@ -85,9 +134,95 @@
     margin-bottom: 30px;
   }
 
+  .state-page {
+    &__list {
+      @include list-reset;
+      margin-bottom: 20px;
+
+      // Нумерованный список
+      &--numbered {
+        counter-reset: item;
+
+        .state-page__item {
+          counter-increment: item;
+
+          &::before {
+            content: counter(item) ".";
+            font-weight: 700;
+            color: var(--black);
+          }
+        }
+      }
+
+      // Маркированный список (точки)
+      &--bulleted {
+        .state-page__item {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 16px;
+
+          @include mobile {
+            font-size: 14px;
+          }
+
+          &::before {
+            content: "•";
+            font-size: 20px;
+            line-height: 1.2;
+            color: var(--black);
+            flex-shrink: 0;
+
+            @include mobile {
+              font-size: 16px;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .state-page__list {
+    @include list-reset;
+    counter-reset: item; // создаём счётчик
+    margin-left: 8px;
+    margin-bottom: 20px;
+
+    &--numbered {
+      .state-page__item {
+        font-size: 16px;
+        line-height: 120%;
+        counter-increment: item; // увеличиваем счётчик для каждого элемента
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        &::before {
+          content: counter(item) "."; // выводим номер с точкой
+          font-weight: 700;
+          color: var(--black);
+        }
+      }
+    }
+  }
+
+  &__item span {
+    font-weight: 700;
+    font-size: 16px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
   &__btn {
     max-width: 194px;
     margin-bottom: 30px;
+
+    @include mobile {
+      max-width: 100%;
+    }
   }
 
   &__navigate {
