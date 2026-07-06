@@ -4,6 +4,10 @@
 .sec-faq__accordion {
   margin-bottom: 140px;
 
+  @include tablet {
+    margin-bottom: 70px;
+  }
+
   .accordion__item {
     border-bottom: 1px solid var(--accent);
     margin-bottom: 30px;

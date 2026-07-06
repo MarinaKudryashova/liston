@@ -48,7 +48,7 @@
   &__icon {
     position: absolute;
     bottom: 0;
-    right: 353px;
+    right: 259px;
     width: 71px;
     height: 60px;
     fill: var(--accent);
@@ -58,7 +58,7 @@
 
     @include tablet {
       display: none;
-    } // на планшете и мобилке скрываем – её дубль будет поверх слайдера
+    } // на планшете и мобилке скрываем – дубль будет поверх слайдера
   }
 
   // ------ ГАЛЕРЕЯ (слайдер) ------
@@ -92,10 +92,14 @@
         flex: 1;
         min-width: 0;
         order: 2;
+        height: auto;
+        max-height: 720px;
+        align-self: flex-start;
 
         @include tablet {
           order: 1;
           width: 100%;
+          max-height: none;
         }
 
         @include mobile {
@@ -118,6 +122,7 @@
         width: 108px;
         overflow: hidden;
         order: 1;
+        max-height: 720px; // ← чтобы контейнер не растягивался
 
         @include tablet {
           order: 2;
@@ -186,41 +191,84 @@
 
         // ----- МИНИАТЮРЫ (картинки) -----
         .product-gallery__thumb {
+          display: block;
+          width: 100%;
+          height: auto;
+          border-radius: 4px;
+          cursor: pointer;
+          opacity: 0.5;
+          transition:
+            opacity 0.3s ease,
+            border-color 0.3s ease;
+          border: 1px solid transparent;
+
           img {
             display: block;
             width: 100%;
             height: auto;
-            border-radius: 4px;
             cursor: pointer;
           }
         }
 
+        // Активная миниатюра
+        .swiper-slide-thumb-active .product-gallery__thumb {
+          opacity: 1;
+          border-color: var(--black-24);
+        }
+
         // ----- СЛАЙДЫ МИНИАТЮР (swiper-slide) -----
         .swiper-slide {
-          margin-bottom: 10px; // отступ между миниатюрами вертикально
+          margin-bottom: 10px;
+          width: auto;
+          flex-shrink: 0;
+          height: 108px !important;
+          overflow: visible;
+          padding: 2px;
+          box-sizing: content-box;
+
+          // Картинка внутри слайда
+          .product-gallery__thumb {
+            height: 100%; // на весь слайд
+
+            img {
+              display: block;
+              width: 100%;
+              height: 100%;
+              // object-fit: cover; // сохраняем пропорции
+            }
+          }
+
           &:last-child {
             margin-bottom: 0;
           }
 
           @include tablet {
-            width: 90px !important; // ширина каждой миниатюры на планшете
+            width: 90px !important;
+            height: 90px !important;
             flex-shrink: 0;
             margin-bottom: 0;
-            margin-right: 10px; // отступ между миниатюрами горизонтально
+            margin-right: 10px;
+            padding: 2px;
             &:last-child {
               margin-right: 0;
             }
           }
 
-          // @include small-tablet { width: 70px !important; }
-
           @include mobile {
-            width: 64px !important; // ещё меньше на мобилках
+            width: 64px !important;
+            height: 64px !important;
+            padding: 2px;
           }
         }
 
         // Контейнер слайдера Swiper для миниатюр (дополнительная обёртка)
         .product-gallery__thumbs-slider {
+          width: 100%;
+          height: auto;
+          // overflow: visible;
+          overflow: hidden;
+          max-height: 580px;
+
           @include tablet {
             flex: 1;
             max-height: 100px;
@@ -233,13 +281,13 @@
 
   // ------ ПРАВАЯ КОЛОНКА С ИНФОРМАЦИЕЙ О ТОВАРЕ ------
   &__info {
-    grid-column: span 3; // на десктопе 3 колонки
+    grid-column: span 3;
 
     @include tablet {
-      grid-column: 1 / -1; // на планшете на всю ширину
+      grid-column: 1 / -1;
       width: 100%;
-      max-width: 480px; // но ограничиваем, чтобы не расползалась
-      margin: 0 auto;
+      // max-width: 480px;
+      // margin: 0 auto;
     }
 
     .product-card {
@@ -293,15 +341,6 @@
         }
       }
 
-      .prices__old {
-        // @include small-desktop {
-        //   font-size: 18px;
-        // }
-        // @include tablet {
-        //   font-size: 18px;
-        // }
-      }
-
       // ЛЕЙБЛ СКИДКИ
       &__label {
         position: absolute;
@@ -351,10 +390,6 @@
           gap: 12px;
           margin-top: 8px;
         }
-      }
-
-      &__like,
-      &__compare {
       }
 
       // СПИСОК ПРЕИМУЩЕСТВ
@@ -418,9 +453,10 @@
 // Показываем дубли поверх слайдера
 @include tablet {
   .product-card__label--mobile,
-  .product-card__btns--mobile,
-  .single-services__icon--mobile {
+  .product-card__btns--mobile {
     display: flex;
+    position: absolute;
+    z-index: 20;
   }
 
   // Позиционирование внутри .product-gallery__main
@@ -432,7 +468,7 @@
       position: absolute;
       top: 0px;
       left: 0px;
-      z-index: 2;
+      z-index: 20;
     }
 
     // Кнопки "избранное" и "сравнение"
@@ -440,16 +476,19 @@
       position: absolute;
       top: 0px;
       right: 0px;
-      z-index: 2;
+      z-index: 20;
       display: flex;
       gap: 8px;
     }
 
     // Иконка 3D – справа внизу
     .single-services__icon--mobile {
+      display: flex;
       position: absolute;
-      bottom: 0px;
-      right: 0px;
+      z-index: 20;
+      bottom: 0px !important;
+      right: 0px !important;
+      left: auto !important;
       width: 40px;
       height: 40px;
     }
