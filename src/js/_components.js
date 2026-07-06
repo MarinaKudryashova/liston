@@ -8,6 +8,7 @@ import "./components/fslightbox-img";
 import "./components/menu-desktop";
 import "./components/menu-mobile";
 import "./components/lang";
+import "./components/animation";
 import "./components/search";
 import "./components/slider";
 import "./components/like-btn";

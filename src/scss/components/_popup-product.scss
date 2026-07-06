@@ -97,11 +97,31 @@
     font-size: 16px;
     color: var(--grey);
     padding: 0;
+    transition: color var(--transition-300);
+
+    &:hover {
+      color: var(--accent);
+
+      svg {
+        stroke: var(--accent);
+      }
+    }
+
+    &:focus {
+      outline: none;
+      color: var(--accent);
+
+      svg {
+        stroke: var(--accent);
+      }
+    }
 
     svg {
       width: 20px;
       height: 20px;
-      fill: var(--grey);
+      stroke: var(--grey);
+      fill: none;
+      transition: stroke var(--transition-300);
     }
   }
 }
