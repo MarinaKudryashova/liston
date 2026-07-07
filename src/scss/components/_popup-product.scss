@@ -23,7 +23,7 @@
 .modal__window {
   background-color: var(--white);
   max-width: 1400px;
-  width: 90%;
+  width: 100%;
   min-width: 320px;
 
   max-height: 95vh; // Ограничиваем высоту окна
@@ -37,7 +37,7 @@
     transform: translateY(0);
   }
 
-  @include mobile {
+  @include tablet {
     max-height: 100vh;
   }
 }
@@ -308,6 +308,12 @@
 
   @include tablet-xl {
     margin-bottom: 30px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  @include mobile {
+    flex-direction: column;
   }
 }
 

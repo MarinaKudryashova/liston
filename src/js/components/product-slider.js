@@ -45,7 +45,7 @@ if (productGalleries.length) {
     // ===== Слайдер миниатюр =====
     const thumbsSwiper = new Swiper(thumbsSliderEl, {
       direction: "vertical",
-      loop: true,
+      loop: false,
       spaceBetween: 10,
       slidesPerView: "auto",
       watchSlidesProgress: true,
@@ -69,20 +69,20 @@ if (productGalleries.length) {
           direction: "horizontal",
           spaceBetween: 8,
           slidesPerView: "auto",
-          loop: true,
+          loop: false,
         },
         1024: {
           direction: "vertical",
           spaceBetween: 8,
           slidesPerView: 5,
-          loop: true,
+          loop: false,
           watchSlidesProgress: true,
         },
         1200: {
           direction: "vertical",
           spaceBetween: 8,
           slidesPerView: 5,
-          loop: true,
+          loop: false,
           watchSlidesProgress: true,
         },
       },
@@ -91,6 +91,7 @@ if (productGalleries.length) {
     // ===== Основной слайдер =====
     const mainSwiper = new Swiper(mainSliderEl, {
       loop: false,
+      initialSlide: 0,
       spaceBetween: 0,
       slidesPerView: 1,
       watchSlidesProgress: true,
@@ -100,6 +101,27 @@ if (productGalleries.length) {
       },
     });
 
+    // ===== ФУНКЦИЯ ПРОКРУТКИ К АКТИВНОЙ МИНИАТЮРЕ =====
+   function scrollToActiveThumb() {
+      const container = thumbsSliderEl;
+      if (!container) return;
+
+      // Ищем активную миниатюру
+      let activeSlide = container.querySelector(".swiper-slide-thumb-active");
+
+      // Если активной нет — берём первый слайд
+      if (!activeSlide) {
+        activeSlide = container.querySelector('.swiper-slide:not(.swiper-slide-duplicate)');
+      }
+
+      if (activeSlide) {
+        // Прокручиваем контейнер к слайду
+        const slideTop = activeSlide.offsetTop;
+        const containerTop = container.offsetTop;
+        container.scrollTop = slideTop - containerTop;
+      }
+    }
+
     // ===== СТРЕЛКИ =====
     const prevBtn = thumbsContainer.querySelector(
       ".product-gallery__thumb-prev",
@@ -108,21 +130,26 @@ if (productGalleries.length) {
       ".product-gallery__thumb-next",
     );
 
-    function goToSlide(index) {
-      const totalSlides = thumbsSlides.length;
-      const realIndex = ((index % totalSlides) + totalSlides) % totalSlides;
-      thumbsSwiper.slideTo(realIndex);
-      mainSwiper.slideTo(realIndex);
-    }
-
     if (prevBtn) {
       prevBtn.removeAttribute("disabled");
       prevBtn.classList.remove("swiper-button-disabled", "swiper-button-lock");
       prevBtn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const currentIndex = thumbsSwiper.activeIndex;
-        goToSlide(currentIndex - 1);
+
+        const currentIndex = mainSwiper.activeIndex;
+        console.log('⬅️ Стрелка "вверх", текущий индекс:', currentIndex);
+
+        if (currentIndex > 0) {
+          const newIndex = currentIndex - 1;
+          mainSwiper.slideTo(newIndex);
+
+          setTimeout(() => {
+            thumbsSwiper.slideTo(newIndex);
+            console.log(`✅ Синхронизация: main=${newIndex}, thumbs=${thumbsSwiper.activeIndex}`);
+            scrollToActiveThumb();
+          }, 300);
+        }
       });
     }
 
@@ -132,24 +159,38 @@ if (productGalleries.length) {
       nextBtn.addEventListener("click", (e) => {
         e.preventDefault();
         e.stopPropagation();
-        const currentIndex = thumbsSwiper.activeIndex;
-        goToSlide(currentIndex + 1);
+
+        const currentIndex = mainSwiper.activeIndex;
+        const totalSlides = thumbsSlides.length;
+        console.log('➡️ Стрелка "вниз", текущий индекс:', currentIndex, 'всего:', totalSlides);
+
+        if (currentIndex < totalSlides - 1) {
+          const newIndex = currentIndex + 1;
+          mainSwiper.slideTo(newIndex);
+
+          setTimeout(() => {
+            thumbsSwiper.slideTo(newIndex);
+            console.log(`✅ Синхронизация: main=${newIndex}, thumbs=${thumbsSwiper.activeIndex}`);
+            scrollToActiveThumb();
+          }, 300);
+        }
       });
     }
 
     // ===== СИНХРОНИЗАЦИЯ =====
     thumbsSwiper.on("slideChange", () => {
       const index = thumbsSwiper.activeIndex;
-      const totalSlides = thumbsSlides.length;
-      mainSwiper.slideTo(index % totalSlides);
+      mainSwiper.slideTo(index);
+      setTimeout(scrollToActiveThumb, 50);
     });
 
     mainSwiper.on("slideChange", () => {
       const index = mainSwiper.activeIndex;
       thumbsSwiper.slideTo(index);
+      setTimeout(scrollToActiveThumb, 50);
     });
 
-    // ===== КЛИК ПО МИНИАТЮРЕ (ДЕЛЕГИРОВАНИЕ) =====
+    // ===== КЛИК ПО МИНИАТЮРЕ =====
     const thumbsWrapper = thumbsSliderEl.querySelector(".swiper-wrapper");
 
     if (thumbsWrapper) {
@@ -157,7 +198,6 @@ if (productGalleries.length) {
         const slide = e.target.closest(".swiper-slide");
         if (!slide) return;
 
-        // Находим реальный индекс слайда в Swiper
         const realIndex = thumbsSwiper.slides.indexOf(slide);
         if (realIndex === -1) return;
 
@@ -165,16 +205,40 @@ if (productGalleries.length) {
 
         thumbsSwiper.slideTo(realIndex);
         mainSwiper.slideTo(realIndex);
+        setTimeout(scrollToActiveThumb, 50);
       });
     }
 
-    // Синхронизация при загрузке
+    // ===== СИНХРОНИЗАЦИЯ ПРИ ЗАГРУЗКЕ =====
+    // ===== СИНХРОНИЗАЦИЯ ПРИ ЗАГРУЗКЕ =====
+    function scrollToFirstThumb() {
+      const container = thumbsSliderEl;
+      // Ищем первый слайд (оригинальный, не дубликат)
+      const firstSlide = container?.querySelector('.swiper-slide:not(.swiper-slide-duplicate)');
+
+      if (firstSlide) {
+        // Прокручиваем контейнер к первому слайду
+        container.scrollTop = firstSlide.offsetTop - container.offsetTop;
+        console.log('✅ Прокрутили к первой миниатюре');
+      } else {
+        console.warn('⚠️ Первый слайд не найден');
+      }
+    }
+
+    // Принудительная синхронизация с несколькими попытками
     setTimeout(() => {
-      const initialIndex = mainSwiper.activeIndex;
+      const initialIndex = 0;
+      mainSwiper.slideTo(initialIndex);
       thumbsSwiper.slideTo(initialIndex);
       console.log(`✅ Слайдеры синхронизированы: индекс ${initialIndex}`);
+
+      // Прокручиваем к первой миниатюре с несколькими задержками
+      setTimeout(scrollToFirstThumb, 100);
+      setTimeout(scrollToFirstThumb, 300);
+      setTimeout(scrollToFirstThumb, 500);
     }, 100);
 
     console.log("✅ Галерея инициализирована");
   });
 }
+

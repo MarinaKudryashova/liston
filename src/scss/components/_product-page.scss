@@ -61,6 +61,26 @@
     } // на планшете и мобилке скрываем – дубль будет поверх слайдера
   }
 
+  // ИКОНКА 3D (мобильная)
+  &__icon--mobile {
+    display: none; // скрыта по умолчанию
+
+    @include tablet {
+      display: flex;
+      position: absolute;
+      z-index: 20;
+      bottom: 390px;
+      right: 0px;
+      width: 40px;
+      height: 40px;
+      flex-shrink: 0;
+    }
+
+    @include mobile {
+      bottom: 315px;
+    }
+  }
+
   // ------ ГАЛЕРЕЯ (слайдер) ------
   &__gallery {
     grid-column: span 9;
@@ -445,15 +465,15 @@
 
 // Скрываем дубли на десктопе и планшете
 .product-card__label--mobile,
-.product-card__btns--mobile,
-.single-services__icon--mobile {
+.product-card__btns--mobile {
   display: none;
 }
 
 // Показываем дубли поверх слайдера
 @include tablet {
   .product-card__label--mobile,
-  .product-card__btns--mobile {
+  .product-card__btns--mobile,
+  .single-services__icon--mobile {
     display: flex;
     position: absolute;
     z-index: 20;
@@ -479,18 +499,6 @@
       z-index: 20;
       display: flex;
       gap: 8px;
-    }
-
-    // Иконка 3D – справа внизу
-    .single-services__icon--mobile {
-      display: flex;
-      position: absolute;
-      z-index: 20;
-      bottom: 0px !important;
-      right: 0px !important;
-      left: auto !important;
-      width: 40px;
-      height: 40px;
     }
   }
 
