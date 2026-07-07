@@ -22,6 +22,12 @@
             <div class="single-services__row">
               <!-- ЛЕВАЯ КОЛОНКА: СЛАЙДЕР -->
               <div class="single-services__gallery">
+                <!-- Иконка 3д (мобильная) -->
+                <svg
+                  class="single-services__icon single-services__icon--mobile"
+                >
+                  <use xlink:href="img/sprite.svg#3d-icon"></use>
+                </svg>
                 <div class="product-gallery">
                   <!-- МОБИЛЬНЫЕ ЭЛЕМЕНТЫ (ОДИНАКОВЫЕ ДЛЯ ВСЕХ СЛАЙДОВ) -->
                   <span class="product-card__label product-card__label--mobile"
@@ -46,12 +52,6 @@
                       </svg>
                     </button>
                   </div>
-
-                  <svg
-                    class="single-services__icon single-services__icon--mobile"
-                  >
-                    <use xlink:href="img/sprite.svg#3d-icon"></use>
-                  </svg>
 
                   <!-- ОСНОВНОЙ СЛАЙДЕР -->
                   <div class="product-gallery__main swiper">
@@ -304,14 +304,13 @@
           @include('partials/sec-related.html')
           @include('partials/sec-faq.html')
           @include('partials/sec-reviews.html')
-          @include('partials/sec-about.html')
+          @include('partials/sec-equipment.html')
           @include('partials/sec-articles.html')
           @include('partials/banner-contact.html')
         </section>
       </main>
 
-      @include('partials/footer.html')
-      @include('partials/modal.html')
+      @include('partials/footer.html') @include('partials/modal.html')
       @include('partials/topbtn.html')
     </div>
 

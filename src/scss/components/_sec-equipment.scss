@@ -1,0 +1,30 @@
+.sec-equipment {
+  &__heading {
+    margin-bottom: 0;
+  }
+
+  &__text {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 120%;
+
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+      max-height var(--transition-300),
+      opacity var(--transition-300),
+      padding var(--transition-300),
+      visibility var(--transition-300);
+
+    &.expanded {
+      padding-top: 20px;
+      visibility: visible;
+      opacity: 1;
+      max-height: 100px;
+    }
+  }
+}
