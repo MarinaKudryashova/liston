@@ -30,28 +30,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // Для поиска
-document.addEventListener('DOMContentLoaded', () => {
-  const search = document.querySelector('.search');
+  document.addEventListener('DOMContentLoaded', () => {
+    const searches = document.querySelectorAll('.search');
 
-  if (!search) return;
+    if (!searches) return;
 
-  const input = search.querySelector('.search__input');
-  const clearBtn = search.querySelector('.search__btn-clear');
+    searches.forEach((search) => {
+      const input = search.querySelector('.search__input');
+      const clearBtn = search.querySelector('.search__btn-clear');
 
-  const toggleState = () => {
-    search.classList.toggle(
-      'search--filled',
-      input.value.trim().length > 0
-    );
-  };
+      const toggleState = () => {
+        search.classList.toggle(
+          'search--filled',
+          input.value.trim().length > 0
+        );
+      };
 
-  input.addEventListener('input', toggleState);
+      input.addEventListener('input', toggleState);
 
-  clearBtn.addEventListener('click', () => {
-    input.value = '';
-    input.focus();
-    toggleState();
-  });
+      clearBtn.addEventListener('click', () => {
+        input.value = '';
+        input.focus();
+        toggleState();
+      });
 
-  toggleState();
-});
+      toggleState();
+    })
+  }
+);

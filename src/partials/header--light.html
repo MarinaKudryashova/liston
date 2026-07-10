@@ -210,7 +210,7 @@
   <!-- Нижний уровень меню (мобильная версия) -->
   <div class="header__bottom header-bottom fixed-block">
     <div class="header-bottom__container container">
-      <button type="button" class="header-bottom__item ui-iconlink open-search">
+      <button type="button" class="header-bottom__item ui-iconlink open-search-mobile">
         <svg class="header-bottom__icon ui-iconlink__icon">
           <use xlink:href="img/sprite.svg#icon-search"></use>
         </svg>
@@ -230,7 +230,7 @@
         <span class="header-bottom__link-count ui-iconlink__link-count">0</span>
         <span class="header-bottom__text ui-iconlink__text">Избранное</span>
       </a>
-      <a href="cart.html" class="header-bottom__item ui-iconlink">
+      <a href="cart.html" class="header-bottom__item ui-iconlink ui-iconlink--fill">
         <svg class="header-bottom__icon ui-iconlink__icon">
           <use xlink:href="img/sprite.svg#cart"></use>
         </svg>
@@ -238,5 +238,34 @@
         <span class="header-bottom__text ui-iconlink__text">Корзина</span>
       </a>
     </div>
+  </div>
+
+    <!-- Мобильный поиск -->
+  <div class="mobile-search">
+    <form action="#" class="mobile-search__form" aria-label="форма поиска по сайту">
+      <div class="search">
+        <button type="button" class="mobile-search__btn mobile-search__btn--close" aria-label="закрыть форму поиска">
+          <svg class="mobile-search__icon-close">
+            <use xlink:href="img/sprite.svg#arrow-left"></use>
+          </svg>
+        </button>
+        <svg class="search__icon">
+          <use xlink:href="img/sprite.svg#icon-search"></use>
+        </svg>
+        <input type="search" class="search__input input-reset" placeholder="Поиск по сайту ..."
+          aria-label="Введите поисковый запрос">
+        <button type="button" class="search__btn-clear btn-reset" aria-label="очистить строку поиска">
+          <svg class="search__icon-clear">
+            <use xlink:href="img/sprite.svg#close"></use>
+          </svg>
+        </button>
+      </div>
+      <ul class="mobile-search__popular">
+        <li><button class="mobile-search__tag" type="button">Центрифуги</button></li>
+        <li><button class="mobile-search__tag" type="button">Аквадистилляторы</button></li>
+        <li><button class="mobile-search__tag" type="button">Центрифуги</button></li>
+        <li><button class="mobile-search__tag" type="button">Аквадистилляторы</button></li>
+      </ul>
+    </form>
   </div>
 </header>
