@@ -22,3 +22,4 @@ import "./components/quantity";
 import "./components/tabs";
 import "./components/comparison";
 import "./components/cookie-notice";
+import "./components/observer";

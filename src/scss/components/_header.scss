@@ -391,8 +391,8 @@
     width: 100%;
     height: 100%;
     opacity: 0;
-    backdrop-filter: blur(40px); //по макету 10рх, но так ничего не видно
-    background-color: var(--white-24);
+    backdrop-filter: blur(10px);
+    background-color: var(--black-40);
     transition: background-color var(--transition-300), opacity var(--transition-300);
   }
 
@@ -418,6 +418,19 @@
     }
     & .logo__img--black {
       display: none;
+    }
+
+    &:has(.mobile-search.is-open) {
+      background-color: var(--white);
+      --link-color: var(--black);
+      --link-border-color: var(--black-24);
+
+      & .logo__img--light {
+        display: none;
+      }
+      & .logo__img--black {
+        display: block;
+      }
     }
   }
 }

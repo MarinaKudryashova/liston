@@ -1,9 +1,14 @@
+import { disableScroll } from "../functions/disable-scroll";
+import { enableScroll } from "../functions/enable-scroll";
+
 document.addEventListener("DOMContentLoaded", () => {
+
+  // Десктопный поиск
   const searchbar = document.querySelector(".searchbar");
 
   if (!searchbar) return;
 
-  const openBtns = searchbar.querySelectorAll(".searchbar__btn--open, .open-search");
+  const openBtns = document.querySelectorAll(".searchbar__btn--open, .open-search");
   const closeBtn = searchbar.querySelector(".searchbar__btn--close");
   const input = searchbar.querySelector(".search__input");
   const clearBtn = searchbar.querySelector(".search__btn-clear");
@@ -46,6 +51,71 @@ document.addEventListener("DOMContentLoaded", () => {
       searchbar.classList.remove('is-open');
     }
   });
+
+
+  // Мобильный поиск
+  const mobileSearch = document.querySelector('.mobile-search');
+  const openMobileBtn = document.querySelector('.open-search-mobile');
+  const closeMobileBtn = mobileSearch?.querySelector('.mobile-search__btn--close');
+  const mobileInput = mobileSearch?.querySelector('.search__input');
+  const mobileTags = mobileSearch?.querySelectorAll('.mobile-search__tag');
+
+  console.log('2. Результаты поиска элементов:');
+console.log('   mobileSearch:', mobileSearch);
+console.log('   openMobileBtn:', openMobileBtn);
+console.log('   closeMobileBtn:', closeMobileBtn);
+console.log('   mobileInput:', mobileInput);
+console.log('   mobileTags:', mobileTags);
+
+   console.log('mobileSearch:', mobileSearch);
+  console.log('openMobileBtn:', openMobileBtn);
+
+  if (mobileSearch && openMobileBtn) {
+    const openMobileSearch = () => {
+      mobileSearch.classList.add('is-open');
+      document.body.style.overflow = 'hidden'; // Блокируем скролл
+      setTimeout(() => mobileInput?.focus(), 300);
+    };
+
+    const closeMobileSearch = () => {
+      mobileSearch.classList.remove('is-open');
+      document.body.style.overflow = '';
+    };
+
+    openMobileBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openMobileSearch();
+    });
+
+    closeMobileBtn?.addEventListener('click', () => {
+      closeMobileSearch();
+    });
+
+    // Клик по подсказкам
+    mobileTags?.forEach((tag) => {
+      tag.addEventListener('click', () => {
+        if (mobileInput) {
+          mobileInput.value = tag.textContent.trim();
+          mobileInput.focus();
+          mobileInput.dispatchEvent(new Event('input'));
+        }
+      });
+    });
+
+    // Закрытие по клику вне контейнера
+    mobileSearch.addEventListener('click', (e) => {
+      if (e.target === mobileSearch) {
+        closeMobileSearch();
+      }
+    });
+
+    // Закрытие по Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileSearch.classList.contains('is-open')) {
+        closeMobileSearch();
+      }
+    });
+  }
 });
 
 
