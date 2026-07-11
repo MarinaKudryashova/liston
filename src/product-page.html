@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru" class="page">
+  @include('partials/head.html')
+  <body class="page__body">
+    <div class="site-container">
+      @include('partials/header.html')
+      <main class="main">
+        @include('partials/breadcrumbs-product.html')
+        <section class="single-services sec-offset">
+          <div class="single-services__container container">
+            @include('partials/product-title.html')
+            <div class="single-services__row">
+              @include('partials/product-gallery.html')
+              @include('partials/product-info.html')
+            </div>
+            @include('partials/product-accordion.html')
+          </div>
+          @include('partials/product-mobile-bar.html')
+          @include('partials/sec-delivery.html')
+          @include('partials/sec-certificates.html')
+          @include('partials/sec-related.html')
+          @include('partials/sec-faq.html')
+          @include('partials/sec-reviews.html')
+          @include('partials/sec-equipment.html')
+          @include('partials/sec-articles.html')
+          @include('partials/banner-contact.html')
+        </section>
+      </main>
+      @include('partials/footer.html') @include('partials/modal.html')
+      @include('partials/topbtn.html')
+    </div>
+    @include('partials/popup-product.html')
+  </body>
+</html>

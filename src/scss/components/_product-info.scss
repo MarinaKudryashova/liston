@@ -1,0 +1,153 @@
+.single-services {
+  &__info {
+    grid-column: span 3;
+
+    @include tablet {
+      grid-column: 1 / -1;
+      width: 100%;
+    }
+
+    .product-card {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0;
+      margin-top: 43px;
+
+      @include tablet {
+        margin-top: 0;
+      }
+
+      &__wrap {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-bottom: 0;
+
+        @include mobile {
+          gap: 20px;
+        }
+      }
+
+      &__prices {
+        display: flex;
+        align-items: end;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        @include tablet {
+          order: 1;
+        }
+        @include mobile {
+          gap: 6px;
+          margin-bottom: 0;
+        }
+      }
+
+      .prices__current {
+        @include small-desktop {
+          font-size: 30px;
+        }
+        @include tablet {
+          font-size: 28px;
+        }
+        @include mobile {
+          font-size: 24px;
+        }
+      }
+
+      &__label {
+        position: absolute;
+        bottom: 305px;
+        left: 0;
+        top: auto;
+
+        @include small-desktop {
+          bottom: 322px;
+        }
+      }
+
+      &__action {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+
+        @include tablet {
+          flex-wrap: nowrap;
+          order: 2;
+          gap: 8px;
+        }
+        @include mobile {
+          flex-wrap: wrap;
+          gap: 4px;
+        }
+      }
+
+      &__btns {
+        position: absolute;
+        bottom: 305px;
+        right: 0;
+        top: auto;
+
+        @include small-desktop {
+          bottom: 322px;
+        }
+        @include tablet {
+          order: 4;
+          position: static;
+          bottom: auto;
+          right: auto;
+          top: auto;
+          display: flex;
+          gap: 12px;
+          margin-top: 8px;
+        }
+      }
+
+      &__features {
+        list-style: none;
+        padding: 0;
+        margin: 8px 0 0;
+
+        @include tablet {
+          order: 3;
+          margin-top: 0;
+        }
+      }
+
+      &__feature {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 16px;
+        line-height: 120%;
+        color: var(--black);
+
+        @include small-desktop {
+          font-size: 15px;
+        }
+        @include mobile {
+          font-size: 13px;
+        }
+
+        svg {
+          flex-shrink: 0;
+          width: 20px;
+          height: 20px;
+          fill: var(--accent);
+
+          @include mobile {
+            width: 14px;
+            height: 16px;
+          }
+        }
+        span {
+          flex: 1;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
