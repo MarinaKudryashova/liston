@@ -20,3 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(orderBlock)
   }
 })
+
+ // ===== МОБИЛЬНАЯ ПАНЕЛЬ ТОВАРА =====
+document.addEventListener('DOMContentLoaded', () => {
+  const bar = document.getElementById('mobileProductBar');
+
+  // Только на мобилках и если панель есть
+  if (!bar || window.innerWidth >= 768) return;
+
+  // Наблюдаем за блоком с ценой
+  const priceBlock = document.querySelector('.single-services__info .product-card__prices');
+
+  if (priceBlock) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          bar.classList.toggle('is-visible', !entry.isIntersecting);
+        });
+      },
+      { threshold: 0 }
+    );
+    observer.observe(priceBlock);
+  }
+});
