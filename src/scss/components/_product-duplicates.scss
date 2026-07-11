@@ -1,0 +1,51 @@
+// ДУБЛИ ЭЛЕМЕНТОВ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+
+// Скрываем дубли на десктопе и планшете
+.product-card__label--mobile,
+.product-card__btns--mobile {
+  display: none;
+}
+
+// Показываем дубли поверх слайдера
+@include tablet {
+  .product-card__label--mobile,
+  .product-card__btns--mobile,
+  .single-services__icon--mobile {
+    display: flex;
+    position: absolute;
+    z-index: 20;
+  }
+
+  .product-gallery__main {
+    position: relative;
+
+    .product-card__label--mobile {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      z-index: 20;
+    }
+
+    .product-card__btns--mobile {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      z-index: 20;
+      display: flex;
+      gap: 8px;
+    }
+  }
+
+  .single-services__info {
+    .product-card__label,
+    .product-card__btns {
+      display: none;
+    }
+  }
+}
+
+@include mobile {
+  .single-services {
+    padding-bottom: 80px;
+  }
+}

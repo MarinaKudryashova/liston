@@ -1,0 +1,106 @@
+// ===== МОБИЛЬНАЯ ПАНЕЛЬ ТОВАРА =====
+.mobile-product-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background: var(--white);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+
+  @include mobile {
+    display: block;
+  }
+
+  &.is-visible {
+    transform: translateY(-71px);
+  }
+
+  &__container {
+    @include mobile {
+      display: flex;
+      align-items: center;
+      gap: 21px;
+      padding: 22px 16px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+  }
+
+  // Цены
+  &__prices {
+    @include mobile {
+      display: flex;
+      align-items: end;
+      gap: 6px;
+      flex: 0 0 auto;
+    }
+  }
+
+  &__current {
+    @include mobile {
+      font-weight: 700;
+      font-size: 24px;
+      line-height: 100%;
+      color: var(--red);
+      white-space: nowrap;
+    }
+  }
+
+  &__old {
+    @include mobile {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 110%;
+      color: var(--grey);
+      text-decoration: line-through;
+      white-space: nowrap;
+    }
+  }
+
+  // Блок кнопок
+  &__actions {
+    @include mobile {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+    }
+  }
+
+  // Кнопка "В корзину"
+  &__cart {
+    @include mobile {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      white-space: nowrap;
+      color: var(--white);
+    }
+
+    .product-card__add-to-cart-icon {
+      @include mobile {
+        display: block;
+        width: 16px;
+        height: 16px;
+        fill: var(--white);
+        stroke: var(--white);
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  // Кнопка "Купить в 1 клик"
+  &__oneclick {
+    @include mobile {
+      flex: 1;
+      padding: 12px 24px;
+      font-size: 15px;
+      white-space: nowrap;
+      text-align: center;
+    }
+  }
+}
