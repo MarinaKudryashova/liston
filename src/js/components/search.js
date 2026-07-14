@@ -60,16 +60,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const mobileInput = mobileSearch?.querySelector('.search__input');
   const mobileTags = mobileSearch?.querySelectorAll('.mobile-search__tag');
 
-  console.log('2. Результаты поиска элементов:');
-console.log('   mobileSearch:', mobileSearch);
-console.log('   openMobileBtn:', openMobileBtn);
-console.log('   closeMobileBtn:', closeMobileBtn);
-console.log('   mobileInput:', mobileInput);
-console.log('   mobileTags:', mobileTags);
-
-   console.log('mobileSearch:', mobileSearch);
-  console.log('openMobileBtn:', openMobileBtn);
-
   if (mobileSearch && openMobileBtn) {
     const openMobileSearch = () => {
       mobileSearch.classList.add('is-open');

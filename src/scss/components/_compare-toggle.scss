@@ -1,17 +1,33 @@
 .compare-toggle {
   flex-shrink: 0;
-  
+
   &__label {
     display: flex;
     align-items: center;
     gap: 10px;
     cursor: pointer;
+
+    @include small-tablet {
+      flex-direction: column;
+      gap: 15px;
+      align-items: start;
+    }
+    @include small-mobile {
+      gap: 8px;
+    }
   }
 
   &__label-text {
     font-weight: 400;
     font-size: 14px;
     line-height: 120%;
+
+    @include small-tablet {
+      font-weight: 500;
+    }
+    @include small-mobile {
+      font-size: 12px;
+    }
   }
 
   &__slider {
@@ -24,6 +40,11 @@
     transition: background-color var(--transition-300),
                 border-color var(--transition-300);
 
+    @include small-tablet {
+      width: 67px;
+      height: 35px;
+    }
+
     &::after {
       position: absolute;
       top: 1px;
@@ -33,7 +54,14 @@
       height: 16px;
       border-radius: 50%;
       background-color: var(--white);
-      transition: transform var(--transition-300)
+      transition: transform var(--transition-300);
+
+      @include small-tablet {
+        width: 29px;
+        height: 29px;
+        top: 2px;
+        left: 2px;
+      }
     }
   }
 
@@ -43,6 +71,10 @@
   }
 
   &__input:checked + .compare-toggle__slider::after {
-    transform: translateX(17px);
+    transform: translateX(18px);
+
+    @include small-tablet {
+      transform: translateX(32px);
+    }
   }
 }

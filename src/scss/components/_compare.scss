@@ -1,98 +1,275 @@
 .compare {
-  // &__heading {
-  //   display: flex;
-  //   align-items: end;
-  //   justify-content: space-between;
-  //   padding: 20px 0 16px;
-  //   margin-bottom: 60px;
-  // }
+  position: relative;
 
-  // &__products {
-  //   position: relative;
-  //   width: calc(3 * 333px + 2 * 20px);
-  //   overflow: hidden;
-  // }
+  &__sticky-wrap {
+    position: fixed;
+    top: 85px;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    border-bottom: 1px solid var(--black-24);
+    border-top: 1px solid var(--black-24);
+    z-index: 15;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-100px);
+    pointer-events: none;
 
-  // &__product-list {
-  //   @include list-reset;
-  //   display: flex;
-  //   align-items: center;
-  //   gap: 19px;
-  //   overflow-x: auto;
-  //   scroll-behavior: smooth;
-  //   scrollbar-width: none;
+    transition: opacity var(--transition-300),
+                transform var(--transition-300),
+                visibility var(--transition-300);
 
-  //   &::-webkit-scrollbar {
-  //     display: none;
-  //   }
-  // }
+    @include mobile {
+      top: 72px;
+    }
 
-  // &__product-item {
-  //   flex: 0 0 333px;
-  // }
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+  }
 
-  // &__slider-nav {
-  //   position: absolute;
-  //   top: 50%;
-  //   transform: translateY(-50%);
-  //   left: 0;
-  //   right: 0;
-  //   z-index: 3;
-  //   justify-content: space-between;
-  // }
+  &__sticky {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    width: 100%;
+    max-width: 1400px;
+    padding-top: 20px;
+    padding-bottom: 16px;
 
+    @include tablet {
+      padding-top: 16px;
+      padding-bottom: 10px;
+    }
+
+    @include mobile {
+      padding-top: 7px;
+      padding-bottom: 10px;
+    }
+
+    & .compare__btn-next {
+      top: 60px;
+
+      @include big-desktop {
+        right: 5px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+    & .compare__btn-prev {
+      top: 60px;
+      left: 310px;
+
+      @include small-desktop {
+        left: 280px;
+      }
+
+      @include tablet {
+        display: none;
+      }
+    }
+  }
+
+  &__sticky-fixed {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    flex: 0 0 355px;
+
+    @include big-desktop {
+      padding-left: 16px;
+    }
+
+    @include small-desktop {
+      flex: 0 0 310px;
+    }
+
+    @include tablet {
+      flex: 0 0 250px;
+    }
+
+    @include small-tablet {
+      flex: 0 0 216px;
+    }
+
+    @include mobile {
+      flex: 0 0 184px;
+    }
+
+    @include small-mobile {
+      flex: 0 0 166px;
+    }
+  }
+
+  &__sticky-track {
+    overflow-x: auto;
+    flex: 1;
+    scrollbar-width: none;
+    margin-right: -20px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  &__sticky-list {
+    display: flex;
+    width: max-content;
+  }
 
   &__table-wrapper {
+    position: relative;
     margin-right: -20px;
-    max-height: 1250px;
-    overflow-y: auto;
     overflow-x: auto;
     max-width: 1400px;
     margin-bottom: 110px;
 
-    &::-webkit-scrollbar:vertical {
-      display: none;
-    }
-    &::-webkit-scrollbar-track:horizontal {
+    &::-webkit-scrollbar {
       height: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
       background-color: var(--accent);
     }
   }
 
   &__table {
+    table-layout: fixed;
+    height: 1px;
+    empty-cells: show;
     width: max-content;
     min-width: 100%;
     border-collapse: collapse;
+    border-spacing: 0;
 
-    & .first-row>th,
-    & .first-row>td {
-      padding: 0 10px 68px;
-      border: none;
-    }
-    & .first-row>th {
-      display: flex;
-      align-items: end;
-    }
-    & .first-row>td {
-      max-width: 355px;
+    // Для ячеек с приоритетным значением
+    .accent {
+      background-color: rgba(41, 173, 227, 0.1);
     }
 
-    th, td {
-      min-width: 355px;
-      padding: 28px 16px;
-      border: 1px solid #EEEEEE;
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 100%;
-      color: #1D1D1B;
+    // Первая строка с карточками
+    .first-row {
+      th {
+        width: 355px;
+        padding: 0 10px 76px;
+        text-align: left;
+
+        @include small-desktop {
+          width: 310px;
+        }
+
+        @include tablet {
+          width: 250px;
+          padding: 0 10px 40px;
+        }
+
+        @include small-tablet {
+          width: 200px;
+          padding: 0 10px 24px;
+        }
+
+        @include mobile {
+          width: 168px;
+          padding: 0 4px 20px;
+        }
+
+        @include small-mobile {
+          width: 150px;
+        }
+      }
+
+      th.fixed {
+        position: sticky;
+        left: 0;
+        vertical-align: bottom;
+        padding-left: 0;
+        background-color: var(--white);
+        z-index: 5;
+      }
     }
 
-    th {
-      position: sticky;
-      left: 0;
-      z-index: 2;
-      text-align: left;
-      background-color: var(--white);
+    tbody:not(:first-child) {
+      td {
+        padding: 28px 16px;
+        border: 1px solid #EEEEEE;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 100%;
+        color: #1D1D1B;
+
+        @include tablet {
+          padding: 24px 12px
+        }
+
+        @include small-tablet {
+          padding: 16px;
+          font-size: 12px;
+        }
+
+        @include small-mobile {
+          padding: 12px;
+          font-size: 10px;
+        }
+      }
+
+      tr {
+        border: 1px solid #EEEEEE;
+      }
+
+      tr>td:first-child {
+        position: sticky;
+        left: 0;
+        font-weight: 500;
+        background-color: var(--white);
+        z-index: 5;
+        max-width: 355px;
+
+        @include small-desktop {
+          max-width: 310px;
+        }
+
+        @include tablet {
+          max-width: 250px;
+        }
+
+        @include small-tablet {
+          max-width: 200px;
+        }
+
+        @include mobile {
+          max-width: 168px;
+        }
+      }
+    }
+  }
+
+  &__btn-next {
+    position: absolute;
+    top: 103px;
+    right: -22px;
+    z-index: 10;
+
+    @include tablet {
+      display: none;
+    }
+  }
+
+  &__btn-prev {
+    position: absolute;
+    top: 103px;
+    left: 333px;
+    z-index: 10;
+
+    @include small-desktop {
+      left: 280px;
+    }
+
+    @include tablet {
+      display: none;
     }
   }
 }

@@ -17,5 +17,5 @@ document.addEventListener('DOMContentLoaded', function() {
     btn.addEventListener("click", () => switchTab(index));
   });
 
-  
+  switchTab(0);
 })
