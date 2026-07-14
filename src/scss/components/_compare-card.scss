@@ -25,6 +25,11 @@
     flex: 0 0 150px;
   }
 
+  &__link {
+    position: absolute;
+    inset: 0;
+  }
+
   &__top {
     display: flex;
     align-items: start;
@@ -38,6 +43,7 @@
     right: 10px;
     display: flex;
     align-items: center;
+    z-index: 5;
 
     @include tablet {
       top: auto;
@@ -48,6 +54,7 @@
   &__btn {
     max-width: 303px;
     margin: 0 16px;
+    z-index: 5;
 
     @include tablet {
       max-width: 80px;
