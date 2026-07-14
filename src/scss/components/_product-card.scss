@@ -182,6 +182,46 @@
     }
   }
 
+  //удалить из сравнения
+  &__remove-btn {
+    @include btn-reset;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+
+    @include small-tablet {
+      width: 40px;
+      height: 40px;
+    }
+
+    &:hover {
+      svg {
+        fill: var(--accent);
+      }
+    }
+    &:focus {
+      outline: none;
+      svg {
+        fill: var(--accent);
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: #808080;
+      stroke: none;
+      transition: fill var(--transition-300);
+
+      @include small-tablet {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
   &__label {
     position: absolute;
     top: 0;
@@ -297,6 +337,12 @@
     .product-card__compare {
       display: none;
     }
+    .product-card__compare {
+      display: none;
+    }
+    .product-card__remove-btn {
+      display: none;
+    }
   }
 
   // Карточка товара при сравнении
@@ -308,17 +354,79 @@
     .prices__old {
       display: none;
     }
+    .prices__current {
+      @include small-tablet {
+        font-size: 20px;
+      }
+    }
+    .product-card__wrap {
+      margin-bottom: 0;
+    }
     .product-card__more-btn {
       display: none;
     }
     .product-card__remove-compare {
       display: flex;
+
+      @include small-tablet {
+        display: none;
+      }
+    }
+    .product-card__category {
+      @include small-tablet {
+        font-size: 10px;
+      }
     }
     .product-card__title {
       margin-bottom: 9px;
+
+      @include small-tablet {
+        font-size: 12px;
+      }
+    }
+    .product-card__label {
+      display: none;
     }
     .product-card__prices {
       margin-bottom: 9px;
+    }
+    .product-card__remove-btn {
+      @include small-tablet {
+        display: flex;
+      }
+    }
+    .product-card__add-to-cart {
+      @include small-tablet {
+        max-width: 80px;
+        padding: 8px;
+      }
+      @include small-mobile {
+        max-width: 60px;
+      }
+      span {
+        @include tablet {
+          display: none;
+        }
+      }
+      svg {
+        display: none;
+        width: 24px;
+        height: 24px;
+        stroke: none;
+        fill: white;
+
+        @include tablet {
+          display: block;
+        }
+      }
+    }
+    .product-card__btns {
+      @include small-tablet {
+        top: auto;
+        bottom: 0;
+        right: 0;
+        gap: 0;
+      }
     }
   }
 }

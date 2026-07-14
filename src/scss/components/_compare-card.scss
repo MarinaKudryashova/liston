@@ -1,0 +1,172 @@
+.compare-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 355px;
+  padding: 0 10px;
+
+  @include small-desktop {
+    flex: 0 0 310px;
+  }
+
+  @include tablet {
+    flex: 0 0 250px;
+  }
+
+  @include small-tablet {
+    flex: 0 0 200px;
+  }
+
+  @include mobile {
+    flex: 0 0 168px;
+  }
+
+  @include small-mobile {
+    flex: 0 0 150px;
+  }
+
+  &__top {
+    display: flex;
+    align-items: start;
+    margin-bottom: 10px;
+    gap: 8px;
+  }
+
+  &__action {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    display: flex;
+    align-items: center;
+
+    @include tablet {
+      top: auto;
+      bottom: 0;
+    }
+  }
+
+  &__btn {
+    max-width: 303px;
+    margin: 0 16px;
+
+    @include tablet {
+      max-width: 80px;
+    }
+
+    @include small-tablet {
+      margin: 0;
+      padding: 8px;
+      max-width: 60px;
+    }
+
+    @include small-mobile {
+      max-width: 50px;
+      padding: 5px;
+    }
+
+    span {
+      @include tablet {
+        display: none;
+      }
+    }
+
+    svg {
+      display: none;
+      width: 24px;
+      height: 24px;
+      stroke: none;
+      fill: white;
+
+      @include tablet {
+        display: block;
+      }
+    }
+  }
+
+  &__remove {
+    @include btn-reset;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+
+    @include small-tablet {
+      width: 40px;
+      height: 40px;
+    }
+
+    @include small-mobile {
+      width: 35px;
+      height: 35px;
+    }
+
+    &:hover {
+      svg {
+        fill: var(--accent);
+      }
+    }
+    &:focus {
+      outline: none;
+      svg {
+        fill: var(--accent);
+      }
+    }
+
+    svg {
+      width: 24px;
+      height: 24px;
+      fill: #808080;
+      stroke: none;
+      transition: fill var(--transition-300);
+
+      @include small-tablet {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  & .prices__current {
+    margin-top: 13px;
+    font-size: 16px;
+
+    @include small-tablet {
+      margin-top: 8px;
+    }
+
+    @include small-mobile {
+      font-size: 12px;
+    }
+  }
+
+  & .product-card__title {
+    margin: 0 16px;
+    margin-bottom: 5px;
+
+    @include tablet {
+      font-size: 14px;
+    }
+
+    @include small-tablet {
+      margin: 0 0 8px;
+      font-size: 11px;
+    }
+  }
+
+  & .product-card__like {
+    @include small-tablet {
+      width: 40px;
+      height: 40px;
+    }
+    @include small-mobile {
+      width: 35px;
+      height: 35px;
+    }
+  }
+
+  & .product-card__img img {
+    aspect-ratio: 67 / 56;
+    width: 67px;
+  }
+}
